@@ -32,7 +32,7 @@ def allowed_file(filename):
 def language():
 	global language
 	language = request.args.get('lang')
-	return ""
+	return "hey"
 
 @app.route('/translate',methods=['GET','POST'])
 def translate():

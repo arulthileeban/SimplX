@@ -18,7 +18,7 @@ class CodeSpeak():
                 'product':['product'],
                 '+':['add','increment'],
                 '*':['multiply'],
-                '-':['decrement','subtract'],NLP.py
+                '-':['decrement','subtract'],
                 '/':['divide'],
                 '>':['bigger','larger','greater'],
                 '<':['smaller','lesser','shorter'],
@@ -76,9 +76,7 @@ class CodeSpeak():
                 code_con = code_con + vname + " = []\n"
         elif self.lang == "Perl":
         	if vlength > 1:
-                code_con = code_con + "@"+vname + " = ();\n"
-
-
+        		code_con = code_con + "@"+vname + " = ();\n"
         self.content = self.content + code_con + "\n"
 
     def input_var(self, vtype, vname, vlength):
@@ -214,9 +212,34 @@ class CodeSpeak():
 			func_code += "print sum\n"
         elif self.lang == "Perl":
 			func_code += "my $sum = 0;\nfor ( @"+vname+" ) {\n$sum += $_;\n};\n"
-}
+
 
         self.content += func_code + "\n"
+        
+    def functions(self,func,vname, vtype,vlength):
+		func_code=""
+		if self.lang=="C++":
+			if func == "sort":
+				func_code += "sorted("+vname+","+vname+"+"+str(vlength)+");"
+			if func == "sqrt":
+				func_code += "cout << sqrt("+vname+");"
+			if func == "log":
+				func_code += "cout << log("+vname+");"
+		if self.lang=="Python":
+			if func == "sort":
+				func_code += "print sorted("+vname+","+vname+"+"+str(vlength)+")"
+			if func == "sqrt":
+				func_code += "print math.sqrt("+vname+")"
+			if func == "log":
+				func_code += "print math.log("+vname+")"
+		if self.lang=="Perl":
+			if func == "sort":
+				func_code += "print sort @"+vname+";"
+			if func == "sqrt":
+				func_code += "print sqrt @"+vname+";"
+			if func == "log":
+				func_code += "print log @"+vname+";"
+				
 
     # Adding Arithmetic operations
     def arithmetix(self, vname, intent, num):
