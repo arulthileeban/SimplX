@@ -1,8 +1,10 @@
+from word2num import WordsToNumbers
 import spacy
 class CodeSpeak():
     def __init__(self,lang):
         self.nlp = spacy.load('en')
         # vars - Dictionary of Variables
+        self.wtn = WordsToNumbers()
         self.vars = {}
         # Adding keywords
         self.entities = {
@@ -43,3 +45,7 @@ class CodeSpeak():
     def wipeout(self):
         self.content = ""
         self.vars = {}
+
+    # Return Code
+    def get_code(self):
+        return self.header+self.content+self.footer
