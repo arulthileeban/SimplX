@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="fullTransparent">#00000000</color>
     <color name="Gunmetal">#2c3539</color>
     <color name="Midnight">#2B1B17</color>
     <color name="Charcoal">#34282C</color>

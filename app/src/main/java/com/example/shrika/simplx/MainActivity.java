@@ -18,10 +18,20 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.Locale;
 
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Response;
+
 public class MainActivity extends AppCompatActivity {
+
+    private final OkHttpClient client = new OkHttpClient();
+    String respdata="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +51,70 @@ public class MainActivity extends AppCompatActivity {
     public void algClick(View v){
         LayoutInflater inflater = getLayoutInflater();
         final View alertLayout = inflater.inflate(R.layout.language_sel, null);
+
+        AssetManager am = getApplicationContext().getAssets();
+        Typeface custom = Typeface.createFromAsset(am,
+                String.format(Locale.US, "fonts/%s", "Kelvetica.otf"));
+        Button r1 = (Button)alertLayout.findViewById(R.id.r1);
+        Button r2 = (Button)alertLayout.findViewById(R.id.r2);
+        Button r3 = (Button)alertLayout.findViewById(R.id.r3);
+        TextView txt = (TextView)alertLayout.findViewById(R.id.alertalgflow);
+        txt.setTypeface(custom);
+        r1.setTypeface(custom);
+        r2.setTypeface(custom);
+        r3.setTypeface(custom);
+        txt.setText("Algorithm");
+        r1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {/*
+                    String url = "http://ec2-52-36-236-91.us-west-2.compute.amazonaws.com:5000/voice?text="+"C++";
+                    run(url);
+                    Thread thread1 = new Thread(new Runnable(){
+                        @Override
+                        public void run(){
+                            while (respdata.equals("")){}
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+
+                                    Intent algo = new Intent(MainActivity.this, algorithm.class);
+                                    algo.putExtra("type", "c++");
+                                    startActivity(algo);
+
+                                }
+                            });
+
+
+                        }
+                    });
+                    thread1.start();*/
+                    Intent algo = new Intent(MainActivity.this, algorithm.class);
+                    algo.putExtra("type", "c++");
+                    startActivity(algo);
+                }catch (Exception e){
+
+                }
+            }
+        });
+        r2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent algo =new Intent(MainActivity.this,algorithm.class);
+                algo.putExtra("type","python");
+                startActivity(algo);
+            }
+        });
+        r3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent algo =new Intent(MainActivity.this,algorithm.class);
+                algo.putExtra("type","perl");
+                startActivity(algo);
+
+            }
+        });
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setView(alertLayout);
         alert.setCancelable(true);
@@ -71,6 +145,38 @@ public class MainActivity extends AppCompatActivity {
     public void flowClick(View v){
         LayoutInflater inflater = getLayoutInflater();
         final View alertLayout = inflater.inflate(R.layout.language_sel, null);
+
+        AssetManager am = getApplicationContext().getAssets();
+        Typeface custom = Typeface.createFromAsset(am,
+                String.format(Locale.US, "fonts/%s", "Kelvetica.otf"));
+        Button r1 = (Button)alertLayout.findViewById(R.id.r1);
+        Button r2 = (Button)alertLayout.findViewById(R.id.r2);
+        Button r3 = (Button)alertLayout.findViewById(R.id.r3);
+        TextView txt = (TextView)alertLayout.findViewById(R.id.alertalgflow);
+        txt.setTypeface(custom);
+        r1.setTypeface(custom);
+        r2.setTypeface(custom);
+        r3.setTypeface(custom);
+        txt.setText("Flowchart");
+        r1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        r2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        r3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setView(alertLayout);
         alert.setCancelable(true);
@@ -96,5 +202,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         dialog.show();
+    }
+
+    public void run(String Url) throws Exception {
+
+        okhttp3.Request request = new okhttp3.Request.Builder()
+                .url(Url)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override public void onFailure(Call call, IOException e) {
+                Toast.makeText(MainActivity.this,"request failed",Toast.LENGTH_LONG).show();
+                e.printStackTrace();
+            }
+
+            @Override public void onResponse(Call call, Response response) throws IOException {
+                if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
+
+            respdata = response.body().string();
+                System.out.println(respdata);
+
+
+            }
+        });
+
     }
 }
