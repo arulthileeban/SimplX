@@ -220,17 +220,22 @@ class CodeSpeak():
 		func_code=""
 		if self.lang=="C++":
 			if func == "sort":
+				self.header = "#include<algorithm.h>\n"+self.header
 				func_code += "sorted("+vname+","+vname+"+"+str(vlength)+");"
 			if func == "sqrt":
+				self.header = "#include<math.h>\n"+self.header
 				func_code += "cout << sqrt("+vname+");"
 			if func == "log":
+				self.header = "#include<math.h>\n"+self.header
 				func_code += "cout << log("+vname+");"
 		if self.lang=="Python":
 			if func == "sort":
 				func_code += "print sorted("+vname+","+vname+"+"+str(vlength)+")"
 			if func == "sqrt":
+				self.header="import math"+self.header
 				func_code += "print math.sqrt("+vname+")"
 			if func == "log":
+				self.header="import math"+self.header
 				func_code += "print math.log("+vname+")"
 		if self.lang=="Perl":
 			if func == "sort":
