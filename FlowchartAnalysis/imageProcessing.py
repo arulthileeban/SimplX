@@ -34,7 +34,7 @@ def put(im):
     cv2.imshow("out", im)
     return cv2.waitKey(5) & 0xFF
 
-def daq(r, f, d, c, l):
+#def daq(r, f, d, c, l):
 
 def repository(repo, count):
     for i in range(1, count+1):
@@ -143,8 +143,8 @@ def getFinal(name):
 
         #Displaying Sample Image for OCR
 
-        cv2.imwrite(str(count+1) + ".jpg",chars)
-        f = open(str(count+1)+".jpg", "rb")
+        cv2.imwrite(str("OutPutImages/" + str(count)) + ".jpg",chars)
+        f = open("OutPutImages/" + str(count) + ".jpg", "rb")
         data = f.read()
         d = ocr.getter(data)
 
