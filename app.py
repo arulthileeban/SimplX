@@ -13,9 +13,9 @@ def nlp_process(data):
 #Insert NLP Function here
 	code=""
 	return code
-	
+
 def ip_process(data):
-#Insert IP Function here 
+#Insert IP Function here
 	code=""
 	return code
 
