@@ -32,7 +32,7 @@ def generateSentence(di, shape):
 
 def put(im):
     cv2.imshow("out", im)
-    return cv2.waitKey(5) & 0xFF
+    return cv2.waitKey(1) & 0xFF
 
 #def daq(r, f, d, c, l):
 
@@ -70,7 +70,7 @@ def repository(repo, count):
 def getFinal(name):
     #Predefinition and Setup
     repo = {}
-    count = 0
+    count = arcount = 0
     im, grey = get(name)
     cp = im.copy()
     if im == None:
@@ -100,7 +100,16 @@ def getFinal(name):
         epsilon = 0.02*cv2.arcLength(cnt,True)
         approx = cv2.approxPolyDP(cnt,epsilon,True)
         a = cv2.contourArea(cnt)
-        if a < 5300 or a > 24000:
+        if a < 300 or a > 24000:
+            continue
+        elif a < 5300:
+            fin = cv2.drawContours(cp, [cnt], 0, (0,0,225), 1)
+            if len(approx) <= 8:
+                print "stopped"
+                x,y,w,h = cv2.boundingRect(cnt)
+                chars = im[y:(y+h),x:(x+w),:]
+                arcount += 1
+                cv2.imwrite(str("OutPutImages/Ar" + str(arcount)) + ".jpg",chars)
             continue
         if st == 1:
             st = 0
