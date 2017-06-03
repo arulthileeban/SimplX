@@ -3,6 +3,8 @@ from flask import request
 import os
 app = Flask(__name__)
 
+language="C"
+
 app.config['UPLOAD_FOLDER'] = 'uploads/'
 
 app.config['ALLOWED_EXTENSIONS'] = set(['txt','wav', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
@@ -26,13 +28,18 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
 
-@app.route('/translate',methods=['GET','POST'])
+@app.route('/language',methods=['GET','POST'])
+def language():
+	global language
+	language = request.args.get('lang')
+	return ""
+
+@app.route('/translate',methods=['GET','POST']
 def translate():
     data = request.args.get('text')
     s_data= trans_process(data)
     s_code=nlp_process(data)
     return s_code
-
 
 
 @app.route('/voice', methods=['GET', 'POST'])
