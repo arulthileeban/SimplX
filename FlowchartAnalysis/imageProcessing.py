@@ -36,33 +36,60 @@ def put(im):
 
 #def daq(r, f, d, c, l):
 
-def repository(repo, count):
+def buildGraph(repo, count, arrows, arcount):
+    for i in range(1, count + 1):
+        for j in range(1, count + 1):
+            if i == j:
+                continue
+            else:
+                for k in range(1, arcount + 1):
+                    if ((arrows[k]['cx'] > ((repo[i]['cx'] + repo[j]['cx'])/ 2) - 20) or (arrows[k]['cx'] < ((repo[i]['cx'] + repo[j]['cx'])/ 2) + 20)) and ((arrows[k]['cy'] > ((repo[i]['cy'] + repo[j]['cy'])/ 2) - 20) or (arrows[k]['cy'] < ((repo[i]['cy'] + repo[j]['cy'])/ 2) + 20)):
+                        if arrows[k]['orientation'] == 'horizontal':
+                            if repo[i]['cx'] < repo[j]['cx']:
+                                repo[i]['no'] = j
+                                print i + "->" + j
+                            else
+                                repo[j]['no'] = i
+                                print j + "->" + i
+                        else:
+                            if repo[i]['cy'] < repo[j]['cy']:
+                                repo[i]['yes'] = j
+                                print i + "!^" + j
+                            else
+                                repo[j]['yes'] = i
+                                print j + "!^" + i
+    return repo
+
+
+def repository(repo, count, arrows, arcount):
     for i in range(1, count+1):
         repo[i]['no'] = None
         repo[i]['yes'] = None
         repo[i]['root'] = 0
+    repo = buildGraph(repo, count, arrows, arcount)
+    for i in range(1, count + 1):
         for j in range(1, count+1):
             if i == j: continue
             if repo[i]['type'] == 'input':
                 repo[i]['root'] = 1
-                if abs(repo[j]['cx'] - repo[i]['cx']) <= 10:
-                    if repo[i]['no']== None:
-                        repo[i]['no'] = j
             elif repo[i]['type'] == 'operation':
-                if abs(repo[j]['cx'] - repo[i]['cx']) <= 10:
-                    if repo[i]['no']== None:
-                        repo[i]['no'] = j
+                continue
             elif repo[i]['type'] == 'decision':
-                if abs(repo[j]['cx'] - repo[i]['cx']) <= 10 and repo[j]['cy'] > repo[i]['cy']:
-                    repo[i]['type'] = 'loop'
-                    if repo[i]['no']== None:
-                        repo[i]['no'] = j
-                elif abs(repo[j]['cy'] - repo[i]['cy']) <= 10:
-                    if repo[i]['no']== None:
-                        repo[i]['no'] = j
-                    else:
+                now = i
+                next = repo[i]['yes']
+                while next != None:
+                    now = next
+                    next = repo[now]['yes']
+                for k in range(1, arcount + 1):
+                    if abs(arrows[k][cy] - repo[now][cy]) <= 20:
+                        repo[now]['type'] = 'endif'
+                        repo[now]['yes'] = repo[now]['no']
                         repo[i]['type'] = 'if'
-                        repo[i]['yes'] = j
+                    else
+                        repo[now]['type'] = 'endloop'
+                        repo[now]['yes'] = i
+                        repo[now]['no'] = i
+                        repo[i]['type'] = 'loop'
     bf.printer(repo)
     decs = 0
     fin = str('')
@@ -70,6 +97,7 @@ def repository(repo, count):
 def getFinal(name):
     #Predefinition and Setup
     repo = {}
+    arrows = {}
     count = arcount = 0
     im, grey = get(name)
     cp = im.copy()
@@ -109,7 +137,17 @@ def getFinal(name):
                 x,y,w,h = cv2.boundingRect(cnt)
                 chars = im[y:(y+h),x:(x+w),:]
                 arcount += 1
-                cv2.imwrite(str("OutPutImages/Ar" + str(arcount)) + ".jpg",chars)
+                arrows[arcount] = {}
+                M = cv2.moments(cnt)
+                arrows[arcount]['cx'] = int(M['m10']/M['m00'])
+                arrows[arcount]['cy'] = int(M['m01']/M['m00'])
+                if w > h:
+                    arrows[arcount]['orientation'] = 'horizontal'
+                else:
+                    arrows[arcount]['orientation'] = 'vertical'
+                #chars = cv2.putText(chars, arrows[arcount]['orientation'], (50,50), cv2.FONT_HERSHEY_SIMPLEX, 4, (255,255,255), 2, cv2.LINE_AA)
+                cv2.imwrite(str("OutPutImages/Arr" + str(arcount)) + ".jpg",chars)
+                print arcount, arrows[arcount]['orientation']
             continue
         if st == 1:
             st = 0
@@ -162,6 +200,7 @@ def getFinal(name):
         repo[count] = generateSentence(d, shape)
         repo[count]['cx'] = int(M['m10']/M['m00'])
         repo[count]['cy'] = int(M['m01']/M['m00'])
+        print "\n\n", type(repo), repo, "\n\n"
         put(chars)
         no += 1
         #fin = cv2.drawContours(cp, [approx], 0, (255,0,0), 1)
@@ -173,7 +212,7 @@ def getFinal(name):
 
     #Generating Final code in Natural Language to send to NLP Section
 
-    code = repository(repo, count) # THIS VARIABLE "code" CONTAINS THE FINAL CODE.
+    code = repository(repo, count, arrows, arcount) # THIS VARIABLE "code" CONTAINS THE FINAL CODE.
     print code
     return code
 
