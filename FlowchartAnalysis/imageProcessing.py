@@ -29,12 +29,43 @@ def generateSentence(di, shape):
         dj['type'] = shape
     print dj
     return dj
-    
+
 def put(im):
+    cv2.imshow("out", im)
+    return cv2.waitKey(5) & 0xFF
 
 def daq(r, f, d, c, l):
 
 def repository(repo, count):
+    for i in range(1, count+1):
+        repo[i]['no'] = None
+        repo[i]['yes'] = None
+        repo[i]['root'] = 0
+        for j in range(1, count+1):
+            if i == j: continue
+            if repo[i]['type'] == 'input':
+                repo[i]['root'] = 1
+                if abs(repo[j]['cx'] - repo[i]['cx']) <= 10:
+                    if repo[i]['no']== None:
+                        repo[i]['no'] = j
+            elif repo[i]['type'] == 'operation':
+                if abs(repo[j]['cx'] - repo[i]['cx']) <= 10:
+                    if repo[i]['no']== None:
+                        repo[i]['no'] = j
+            elif repo[i]['type'] == 'decision':
+                if abs(repo[j]['cx'] - repo[i]['cx']) <= 10 and repo[j]['cy'] > repo[i]['cy']:
+                    repo[i]['type'] = 'loop'
+                    if repo[i]['no']== None:
+                        repo[i]['no'] = j
+                elif abs(repo[j]['cy'] - repo[i]['cy']) <= 10:
+                    if repo[i]['no']== None:
+                        repo[i]['no'] = j
+                    else:
+                        repo[i]['type'] = 'if'
+                        repo[i]['yes'] = j
+    bf.printer(repo)
+    decs = 0
+    fin = str('')
 
 def getFinal(name):
     #Predefinition and Setup
