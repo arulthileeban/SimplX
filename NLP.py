@@ -18,7 +18,7 @@ class CodeSpeak():
                 'product':['product'],
                 '+':['add','increment'],
                 '*':['multiply'],
-                '-':['decrement','subtract'],
+                '-':['decrement','subtract'],NLP.py
                 '/':['divide'],
                 '>':['bigger','larger','greater'],
                 '<':['smaller','lesser','shorter'],
