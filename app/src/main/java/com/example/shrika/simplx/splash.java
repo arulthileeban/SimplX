@@ -25,8 +25,9 @@ public class splash extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         AssetManager am = getApplicationContext().getAssets();
         Typeface custom = Typeface.createFromAsset(am,
-                String.format(Locale.US, "fonts/%s", "Freeroad Light.ttf"));
+                String.format(Locale.US, "fonts/%s", "Kelvetica.otf"));
         final TextView title = (TextView) findViewById(R.id.TitleView);
+        title.setTypeface(custom);
         final Animation animation = AnimationUtils.loadAnimation(this, R.anim.my_animation);
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

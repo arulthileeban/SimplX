@@ -3,7 +3,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/pure_black"
     tools:context="com.example.shrika.simplx.MainActivity">
 
+    <ImageView
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/mainimage"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Algorithm"
+        android:textSize="20dp"
+        android:id="@+id/bAlg"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="130dp"
+        android:background="@drawable/mainback"
+        android:padding="8dp"
+        android:onClick="algClick"
+        />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Flowchart"
+        android:textSize="20dp"
+        android:id="@+id/bflow"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/mainback"
+        android:padding="8dp"
+        android:onClick="flowClick"
+        />
 
 </RelativeLayout>

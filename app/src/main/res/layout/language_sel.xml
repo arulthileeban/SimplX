@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/mainblack2">
+
+        <Button
+            android:layout_width="150dp"
+            android:padding="8dp"
+            android:textSize="20dp"
+            android:id="@+id/r1"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:background="@drawable/mainback1"
+            android:textColor="@color/White"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="5dp"
+            android:text="C++"/>
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="8dp"
+            android:textSize="20dp"
+            android:id="@+id/r2"
+            android:layout_below="@id/r1"
+            android:background="@drawable/mainback1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/White"
+            android:text="Python" />
+        <Button
+            android:layout_width="150dp"
+            android:padding="8dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="20dp"
+            android:id="@+id/r3"
+            android:layout_below="@id/r2"
+            android:layout_height="wrap_content"
+            android:background="@drawable/mainback1"
+            android:textColor="@color/White"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="40dp"
+            android:text="PHP"/>
+
+</RelativeLayout>
