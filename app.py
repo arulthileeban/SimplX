@@ -17,9 +17,23 @@ def ip_process(data):
 	code=""
 	return code
 
+def trans_process(data):
+#Insert Translate Function here
+	trans_data=""
+	return trans_data
+
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
+
+@app.route('/translate',methods=['GET','POST'])
+def translate():
+    data = request.args.get('text')
+    s_data= trans_process(data)
+    s_code=nlp_process(data)
+    return s_code
+
+
 
 @app.route('/voice', methods=['GET', 'POST'])
 def voice():
@@ -36,6 +50,7 @@ def picture():
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         s_code=ip_process(filename)
         return s_code
+
 
 @app.route('/')
 def index():
