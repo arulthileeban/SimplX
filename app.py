@@ -34,7 +34,7 @@ def language():
 	language = request.args.get('lang')
 	return ""
 
-@app.route('/translate',methods=['GET','POST']
+@app.route('/translate',methods=['GET','POST'])
 def translate():
     data = request.args.get('text')
     s_data= trans_process(data)
@@ -47,7 +47,6 @@ def voice():
     data = request.args.get('text')
     s_code= nlp_process(data)
     return s_code
-
 
 @app.route('/picture',methods=['GET','POST'])
 def picture():

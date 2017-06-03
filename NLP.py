@@ -34,6 +34,9 @@ class CodeSpeak():
             self.footer="return 0;}"
         elif lang == "Python":
             self.footer=self.header=""
+        elif lang == "Perl":
+        	self.header="#!/usr/bin/perl\n"
+        	self.footer=""
         # Wiping out and initialising content
         self.content = ""
 
@@ -71,8 +74,10 @@ class CodeSpeak():
         elif self.lang == "Python":
             if vlength > 1:
                 code_con = code_con + vname + " = []\n"
-        elif self.lang == "PHP":
-            pass # TODO Add PHP initialisation code here
+        elif self.lang == "Perl":
+        	if vlength > 1:
+                code_con = code_con + "@"+vname + " = ();\n"
+
 
         self.content = self.content + code_con + "\n"
 
@@ -117,8 +122,14 @@ class CodeSpeak():
                 # Input one string
                 else:
                     code_con = code_con + vname+" = raw_input('Enter string')"
-        elif self.lang == "PHP":
-            pass #TODO Insert code for PHP
+        elif self.lang == "Perl":
+        	if vlength==1:
+        		code_con += "$"+vname+" = <>;"
+        	if vlength>1:
+        		code_con += "$n="+str(vlength)+";\nwhile ( $n >0 ){\n"
+        		code_con += "$val= <> ;\npush(@"+vname+",val);\n"
+        		code_con += "$n = $n - 1;}"
+
 
         self.content = self.content + code_con + "\n"
 
@@ -141,8 +152,8 @@ class CodeSpeak():
             # Printing a single element in Python
             else:
                 code_con = code_con + "print " + vname
-        elif self.lang == "PHP":
-            pass #TODO Insert code for PHP
+        elif self.lang == "Perl":
+            code_con += "print "+vname+";\n"
 
         self.content = self.content + code_con + "\n"
 
@@ -154,9 +165,10 @@ class CodeSpeak():
             func_code += "\n\t\tif(small>" + vname + "[i])\n\t\t\tsmall=" + vname + "[i];\n"
             func_code += "\tcout<<small;\n"
         elif self.lang == "Python":
-            pass #TODO Insert code for Python
-        elif self.lang == "PHP":
-            pass #TODO Insert code for PHP
+        	func_code += "min("+vname+")\n"
+        elif self.lang == "Perl":
+			func_code += "my $min = 9999;\nfor ( @"+vname+" ) {\n$min = $_ if !$min || $_ < $min ;};\nprint $min;\n"
+
 
         self.content += func_code + "\n"
 
@@ -168,9 +180,9 @@ class CodeSpeak():
             func_code += "\n\t\tif(great<" + vname + "[i])\n\t\t\tgreat=" + vname + "[i];\n"
             func_code += "\tcout<<great;\n"
         elif self.lang == "Python":
-            pass #TODO Insert code for Python
-        elif self.lang == "PHP":
-            pass #TODO Insert code for PHP
+        	func_code += "print min("+vname+")\n"
+        elif self.lang == "Perl":
+			func_code += "my $max = -9999;\nfor ( @"+vname+" ) {\n$max = $_ if !$max || $_ > $max ;};\nprint $max;\n"
 
         self.content += func_code + "\n"
 
@@ -182,10 +194,11 @@ class CodeSpeak():
             func_code += "\n\t\tproduct*=" + vname + "[i];\n"
             func_code += "\tcout<<product;\n"
         elif self.lang == "Python":
-            pass #TODO Insert code for Python
-        elif self.lang == "PHP":
-            pass #TODO Insert code for PHP
-
+			func_code += "product = 1\nfor i in "+vname+":\n"
+			func_code += "\tproduct*=i\n"
+			func_code += "print product\n"
+        elif self.lang == "Perl":
+        	func_code += "my $product = 1;\nfor ( @"+vname+" ) {\n$product *= $_;\n};\n"
         self.content += func_code + ";\n"
 
     def get_sum(self, vtype, vname, vlength):
@@ -196,15 +209,17 @@ class CodeSpeak():
             func_code += "\n\t\tsum+=" + vname + "[i];\n"
             func_code += "\tcout<<sum;\n"
         elif self.lang == "Python":
-            pass #TODO Insert code for Python
-        elif self.lang == "PHP":
-            pass #TODO Insert code for PHP
+			func_code += "sum = 0\nfor i in "+vname+":\n"
+			func_code += "\tsum+=i\n"
+			func_code += "print sum\n"
+        elif self.lang == "Perl":
+			func_code += "my $sum = 0;\nfor ( @"+vname+" ) {\n$sum += $_;\n};\n"
+}
 
         self.content += func_code + "\n"
 
     # Adding Arithmetic operations
     def arithmetix(self, vname, intent, num):
-        # TODO Check out what to do for PHP. Python and C++ are the same
         if num in self.vars:
             vname, num = num, vname
         func_code = ""
