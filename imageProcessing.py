@@ -4,6 +4,7 @@ import cv2
 import ocr
 import erc
 import beautifier as bf
+from NLP import CodeSpeak
 
 def get(str):
     str = "TestImages/" + str
@@ -103,8 +104,9 @@ def repository(repo, count, arrows, arcount):
                     now = next
                     next = repo[now]['yes']
                 for k in range(1, arcount + 1):
-                    if abs(arrows[k]['cy'] - repo[now]['cy']) <= 20:
+                    if abs(arrows[k]['cy'] - repo[now]['cy']) <= 1:
                         repo[now]['type'] = 'endif'
+                        repo[now]['no'] = j
                         repo[now]['yes'] = repo[now]['no']
                         repo[i]['type'] = 'if'
                     else:
@@ -150,7 +152,7 @@ def getFinal(name):
         epsilon = 0.02*cv2.arcLength(cnt,True)
         approx = cv2.approxPolyDP(cnt,epsilon,True)
         a = cv2.contourArea(cnt)
-        if a < 700 or a > 70000:
+        if a < 500 or a > 70000:
             continue
         elif a < 5300:
             fin = cv2.drawContours(cp, [cnt], 0, (0,0,225), 1)
@@ -243,7 +245,21 @@ def getFinal(name):
     code = repository(repo, count, arrows, arcount) # THIS VARIABLE "code" CONTAINS THE FINAL CODE.
     print code
     cv2.imwrite("OutPutImages/ProcessedImage.jpg", fin)
-    return code
+    now = 1
+    c = CodeSpeak("cpp")
+    c.wipeout()
+    c.blockproc(' '.join(repo[now]['words']))
+    now += 1
+    total = ''
+    if repo[now]['type'] == 'if':
+        pos = repo[now]['yes']
+        neg = repo[now]['no']
+        total = total + ' '.join(repo[now]['words']) + ' then ' + ' '.join(repo[pos]['words']) + ' else ' + ' '.join(repo[neg]['words'])
+        c.blockproc(total)
+        bounce = repo[pos]['yes'] + 4
+        c.blockproc(' '.join(repo[bounce]['words']))
+
+    c.assemble()
 
 if __name__ == '__main__':
-    getFinal("Flowmain.jpg")
+    getFinal("Flowmain2.jpg")
