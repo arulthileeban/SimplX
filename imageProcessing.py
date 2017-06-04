@@ -186,8 +186,7 @@ def getFinal(name):
         #fin = cv2.drawContours(cp, [cnt], 0, (0,0,255), 1
 
         fin = cv2.drawContours(cp, [cnt], 0, (0,0,255), 1)
-        if put(fin) == ord('q'):
-            break
+
 
         if len(approx)==4:
             #print approx
@@ -232,7 +231,7 @@ def getFinal(name):
         repo[count]['cy'] = int(M['m01']/M['m00'])
         fin = cv2.ellipse(fin,(repo[count]['cx'],repo[count]['cy']),(3,3),0,0,360,255,-1)
         print "\n\n", type(repo), repo, "\n\n"
-        put(chars)
+        #put(chars)
         no += 1
         #fin = cv2.drawContours(cp, [approx], 0, (255,0,0), 1)
 
