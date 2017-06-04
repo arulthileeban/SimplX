@@ -53,6 +53,9 @@ class CodeSpeak():
     def wipeout(self):
         self.content = ""
         self.vars = {}
+        self.program = []
+        self.prog_count = -1
+
 
     # Return Code
     def get_code(self):
