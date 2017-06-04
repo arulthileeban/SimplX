@@ -40,22 +40,24 @@ def language():
 def translate():
     data = request.args.get('text')
     s_data= trans_process(data)
-    s_code=nlp_process(data)
-    return s_code
+    return s_data
 
 @app.route('/vline', methods=['GET', 'POST'])
 def vline():
+	global s_code
     data = request.args.get('text')
     s_code += nlp_process(data)
     return s_code
 
 @app.route('/clear')
 def clear():
+	global s_code
 	s_code=""
 	return s_code
 
 @app.route('/voice', methods=['GET', 'POST'])
 def voice():
+	global s_code
     data = request.args.get('text')
     s_code= nlp_process(data)
     return s_code
