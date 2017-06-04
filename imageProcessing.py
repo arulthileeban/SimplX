@@ -7,7 +7,6 @@ import beautifier as bf
 from NLP import CodeSpeak
 
 def get(str):
-    str = "TestImages/" + str
     t = cv2.imread(str, 1)
     t2 = cv2.cvtColor(t, cv2.COLOR_BGR2GRAY)
     return t.copy(), t2.copy()

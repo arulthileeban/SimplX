@@ -18,8 +18,8 @@ app.config['ALLOWED_EXTENSIONS'] = set(['txt','wav', 'pdf', 'png', 'jpg', 'jpeg'
 
 def ip_process(data):
 #Insert IP Function here
-    endPoint(data)
-    code=""
+    code = endPoint(data)
+    print code
     return code
 
 def trans_process(data):
