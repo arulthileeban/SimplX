@@ -260,6 +260,11 @@ def getFinal(name):
         c.blockproc(' '.join(repo[bounce]['words']))
 
     c.assemble()
+    code = c.get_code()
+    return code
+
+def endPoint(name):
+    return getFinal(name)
 
 if __name__ == '__main__':
     getFinal("Flowmain2.jpg")

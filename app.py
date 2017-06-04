@@ -4,6 +4,7 @@ from NLP import CodeSpeak
 from trans import translat
 import os
 import base64
+from imageProcessing import endPoint
 # -*- coding: utf-8 -*-
 app = Flask(__name__)
 
@@ -17,6 +18,7 @@ app.config['ALLOWED_EXTENSIONS'] = set(['txt','wav', 'pdf', 'png', 'jpg', 'jpeg'
 
 def ip_process(data):
 #Insert IP Function here
+    endPoint(data)
     code=""
     return code
 
