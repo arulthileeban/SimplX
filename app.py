@@ -29,7 +29,7 @@ def allowed_file(filename):
 def language():
 	global NLPFunc
 	language = request.args.get('lang')
-	NLPFunc = CodeSpeak(lang)
+	NLPFunc = CodeSpeak(language)
 	return "Language set"
 
 @app.route('/translate',methods=['GET','POST'])
