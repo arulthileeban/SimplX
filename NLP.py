@@ -294,7 +294,7 @@ class CodeSpeak():
             self.content += "\n//" + sent + "\n"
         elif self.lang == "Python" or self.lang == "Perl":
             self.content += "\n#" + sent + "\n"
-    
+
     def init_block(self):
         func_code = "\t{"
         self.content += func_code + "\n"
@@ -395,8 +395,11 @@ class CodeSpeak():
         vtype = 'int'
         count = 1
         root = mod = None
+        # Root of sentence
         sent_root = [w for w in doc if w.head is w][0]
+        # object_var - integer/string
         object_var = list(sent_root.rights)[0]
+        # Merging object_var with its adjectives
         doc[object_var.left_edge.i: object_var.i + 1].merge()
         intent = None
         for i in ['input', 'output', '+', '*', '/', '-']:
@@ -409,12 +412,18 @@ class CodeSpeak():
             w = sent_root
             var = list(w.rights)[0]
             print w, w.lemma, '---', w.dep_, var
-            num, vtype = self.nlp(unicode(var.text))
+            if len(var.text.split()) == 2:
+                num, vtype = self.nlp(unicode(var.text))
+                num = num.text
+            else:
+                vtype = var
+                #vtype = self.nlp(unicode(var.text))
+                num = 1
             print num, vtype
             try:
-                count = int(num.text)
+                count = int(num)
             except ValueError:
-                if num.text == 'a':
+                if num == 'a' or num == 'an':
                     count = 1
                 else:
                     count = self.wtn.parse(num.text)
@@ -425,6 +434,7 @@ class CodeSpeak():
                 vtype = 'string'
             for w in doc:
                 if w.lemma in self.entsets['variabledest']:
+                    print w,list(w.rights)
                     varname = list(w.rights)[0].text
             self.vars[str(varname)] = {'type': vtype, 'length': count}
             print 'Vars is set'
