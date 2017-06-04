@@ -247,4 +247,3 @@ def getFinal(name):
 
 if __name__ == '__main__':
     getFinal("Flowmain.jpg")
-    
