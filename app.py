@@ -13,18 +13,18 @@ app.config['ALLOWED_EXTENSIONS'] = set(['txt','wav', 'pdf', 'png', 'jpg', 'jpeg'
 
 def nlp_process(data):
 #Insert NLP Function here
-	code=""
-	return code
+    code=""
+    return code
 
 def ip_process(data):
 #Insert IP Function here
-	code=""
-	return code
+    code=""
+    return code
 
 def trans_process(data):
 #Insert Translate Function here
-	trans_data=""
-	return trans_data
+    trans_data=""
+    return trans_data
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -32,9 +32,9 @@ def allowed_file(filename):
 
 @app.route('/language',methods=['GET','POST'])
 def language():
-	global language
-	language = request.args.get('lang')
-	return "hey"
+    global language
+    language = request.args.get('lang')
+    return "hey"
 
 @app.route('/translate',methods=['GET','POST'])
 def translate():
@@ -44,20 +44,20 @@ def translate():
 
 @app.route('/vline', methods=['GET', 'POST'])
 def vline():
-	global s_code
+    global s_code
     data = request.args.get('text')
     s_code += nlp_process(data)
     return s_code
 
 @app.route('/clear')
 def clear():
-	global s_code
-	s_code=""
-	return s_code
+    global s_code
+    s_code=""
+    return s_code
 
 @app.route('/voice', methods=['GET', 'POST'])
 def voice():
-	global s_code
+    global s_code
     data = request.args.get('text')
     s_code= nlp_process(data)
     return s_code
