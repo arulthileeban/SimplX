@@ -67,13 +67,9 @@ def voice():
 
 @app.route('/picture',methods=['GET','POST'])
 def picture():
-    fileval = request.files['file']
-    filenam = request.files['filename']
-    print filenam
-    fh = open("uploads/"+str(filenam), "wb")
-    fh.write(fileval.decode('base64'))
-    fh.close()
-    s_code=ip_process(filenam)
+    fileval = request.args.get('text')
+    print fileval
+    s_code=ip_process("uploads/"+str(fileval))
     return s_code
 
 
