@@ -30,7 +30,7 @@ def allowed_file(filename):
 def language():
 	global NLPFunc
 	language = request.args.get('lang')
-	NLPFunc = CodeSpeak(lang)
+	NLPFunc = CodeSpeak(language)
 	return "Language set"
 
 @app.route('/translate',methods=['GET','POST'])
@@ -43,7 +43,7 @@ def translate():
 def vline():
 	global NLPFunc
 	data = request.args.get('text')
-	NLPFunc.blockproc(dat)
+	NLPFunc.blockproc(data)
 	#s_code += nlp_process(data)
 	return "statement Received"
 
