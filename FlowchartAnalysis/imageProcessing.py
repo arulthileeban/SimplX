@@ -24,40 +24,62 @@ def generateSentence(di, shape):
         return
     else:
         dj['words'] = []
-        for i in di["regions"][0]["lines"][0]["words"]:
-            dj['words'].append(i['text'])
+        for i in di["regions"][0]["lines"]:
+            for j in i["words"]:
+                dj['words'].append(j['text'])
         dj['type'] = shape
+
     print dj
     return dj
 
 def put(im):
     cv2.imshow("out", im)
-    return cv2.waitKey(1) & 0xFF
+    return cv2.waitKey(10) & 0xFF
 
 #def daq(r, f, d, c, l):
 
 def buildGraph(repo, count, arrows, arcount):
+    print "\n\n\n", arrows, "\n\n"
     for i in range(1, count + 1):
+        hfound = 0
+        vfound = 0
         for j in range(1, count + 1):
             if i == j:
                 continue
             else:
                 for k in range(1, arcount + 1):
-                    if ((arrows[k]['cx'] > ((repo[i]['cx'] + repo[j]['cx'])/ 2) - 20) or (arrows[k]['cx'] < ((repo[i]['cx'] + repo[j]['cx'])/ 2) + 20)) and ((arrows[k]['cy'] > ((repo[i]['cy'] + repo[j]['cy'])/ 2) - 20) or (arrows[k]['cy'] < ((repo[i]['cy'] + repo[j]['cy'])/ 2) + 20)):
-                        if arrows[k]['orientation'] == 'horizontal':
-                            if repo[i]['cx'] < repo[j]['cx']:
-                                repo[i]['no'] = j
-                                print i + "->" + j
-                            else
-                                repo[j]['no'] = i
-                                print j + "->" + i
-                        else:
-                            if repo[i]['cy'] < repo[j]['cy']:
-                                repo[i]['yes'] = j
-                                print i + "!^" + j
-                            else
-                                repo[j]['yes'] = i
-                                print j + "!^" + i
+                    #print arrows[k]['cx'], arrows[k]['cy'], i, j, (((repo[i]['cx'] + repo[j]['cx'])/ 2) - 2), (((repo[i]['cx'] + repo[j]['cx'])/ 2) + 2), (((repo[i]['cy'] + repo[j]['cy'])/ 2) - 2), (((repo[i]['cy'] + repo[j]['cy'])/ 2) + 2)
+                    if ((arrows[k]['cx'] >= ((repo[i]['cx'] + repo[j]['cx'])/ 2) - 1) and (arrows[k]['cx'] <= ((repo[i]['cx'] + repo[j]['cx'])/ 2) + 1)) or ((arrows[k]['cy'] >= ((repo[i]['cy'] + repo[j]['cy'])/ 2) - 1) and (arrows[k]['cy'] <= ((repo[i]['cy'] + repo[j]['cy'])/ 2) + 1)):
+                            if arrows[k]['used']:
+                                continue
+                            elif arrows[k]['orientation'] == 'horizontal' and hfound == 0 and arrows[k]['cx'] < repo[j]['cx']:
+                                if repo[i]['cx'] < repo[j]['cx']:
+                                    repo[i]['no'] = j
+                                    print str(i) + "-" + str(k) + "->" + str(j)
+                                    arrows[k]['used'] = 1
+                                    hfound = 1
+                                    break
+                                else:
+                                    repo[j]['no'] = i
+                                    print str(j) + "-" + str(k) + "->" + str(i)
+                                    arrows[k]['used'] = 1
+                                    hfound = 1
+                                    break
+                            elif arrows[k]['orientation'] == 'vertical' and vfound == 0 and arrows[k]['cy'] < repo[j]['cy']:
+                                if repo[i]['cy'] < repo[j]['cy']:
+                                    repo[i]['yes'] = j
+                                    print str(i) + "!" + str(k) + "^" + str(j)
+                                    arrows[k]['used'] = 1
+                                    vfound = 1
+                                    break
+                                else:
+                                    repo[j]['yes'] = i
+                                    print str(j) + "!" + str(k) + "^" + str(i)
+                                    arrows[k]['used'] = 1
+                                    vfound = 1
+                                    break
+                if hfound and vfound:
+                    break
     return repo
 
 
@@ -81,11 +103,11 @@ def repository(repo, count, arrows, arcount):
                     now = next
                     next = repo[now]['yes']
                 for k in range(1, arcount + 1):
-                    if abs(arrows[k][cy] - repo[now][cy]) <= 20:
+                    if abs(arrows[k]['cy'] - repo[now]['cy']) <= 20:
                         repo[now]['type'] = 'endif'
                         repo[now]['yes'] = repo[now]['no']
                         repo[i]['type'] = 'if'
-                    else
+                    else:
                         repo[now]['type'] = 'endloop'
                         repo[now]['yes'] = i
                         repo[now]['no'] = i
@@ -128,23 +150,29 @@ def getFinal(name):
         epsilon = 0.02*cv2.arcLength(cnt,True)
         approx = cv2.approxPolyDP(cnt,epsilon,True)
         a = cv2.contourArea(cnt)
-        if a < 300 or a > 24000:
+        if a < 700 or a > 70000:
             continue
         elif a < 5300:
             fin = cv2.drawContours(cp, [cnt], 0, (0,0,225), 1)
-            if len(approx) <= 8:
+            if len(approx) <= 7:
                 print "stopped"
                 x,y,w,h = cv2.boundingRect(cnt)
                 chars = im[y:(y+h),x:(x+w),:]
                 arcount += 1
                 arrows[arcount] = {}
+                arrows[arcount]['used'] = 0
+
                 M = cv2.moments(cnt)
                 arrows[arcount]['cx'] = int(M['m10']/M['m00'])
                 arrows[arcount]['cy'] = int(M['m01']/M['m00'])
+
+                fin = cv2.ellipse(fin,(arrows[arcount]['cx'],arrows[arcount]['cy']),(3,3),0,0,360,255,-1)
+
                 if w > h:
                     arrows[arcount]['orientation'] = 'horizontal'
                 else:
                     arrows[arcount]['orientation'] = 'vertical'
+
                 #chars = cv2.putText(chars, arrows[arcount]['orientation'], (50,50), cv2.FONT_HERSHEY_SIMPLEX, 4, (255,255,255), 2, cv2.LINE_AA)
                 cv2.imwrite(str("OutPutImages/Arr" + str(arcount)) + ".jpg",chars)
                 print arcount, arrows[arcount]['orientation']
@@ -194,18 +222,22 @@ def getFinal(name):
         f = open("OutPutImages/" + str(count) + ".jpg", "rb")
         data = f.read()
         d = ocr.getter(data)
-
+        if d == [] or d == None:
+            continue
         #Generating Natural Language Sentence
 
         repo[count] = generateSentence(d, shape)
         repo[count]['cx'] = int(M['m10']/M['m00'])
         repo[count]['cy'] = int(M['m01']/M['m00'])
+        fin = cv2.ellipse(fin,(repo[count]['cx'],repo[count]['cy']),(3,3),0,0,360,255,-1)
         print "\n\n", type(repo), repo, "\n\n"
         put(chars)
         no += 1
         #fin = cv2.drawContours(cp, [approx], 0, (255,0,0), 1)
 
     #finalizing
+
+    cv2.imwrite("OutPutImages/finalout.jpg", fin)
 
     cv2.destroyAllWindows()
     print "Final Results:\n", repo
@@ -217,6 +249,8 @@ def getFinal(name):
     return code
 
 if __name__ == '__main__':
-    getFinal("flow.jpg")
+    getFinal("Flowmain.jpg")
+    '''
     getFinal("flow2.jpg")
     getFinal("flow3.jpg")
+    '''
