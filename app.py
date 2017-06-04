@@ -1,20 +1,16 @@
 from flask import Flask
 from flask import request
+from NLP import CodeSpeak
 import os
 app = Flask(__name__)
 
 language="C"
-
-s_code = ""
+NLPFunc = None
 
 app.config['UPLOAD_FOLDER'] = 'uploads/'
 
 app.config['ALLOWED_EXTENSIONS'] = set(['txt','wav', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
-def nlp_process(data):
-#Insert NLP Function here
-    code=""
-    return code
 
 def ip_process(data):
 #Insert IP Function here
@@ -32,9 +28,10 @@ def allowed_file(filename):
 
 @app.route('/language',methods=['GET','POST'])
 def language():
-    global language
-    language = request.args.get('lang')
-    return "hey"
+	global NLPFunc
+	language = request.args.get('lang')
+	NLPFunc = CodeSpeak(lang)
+	return "Language set"
 
 @app.route('/translate',methods=['GET','POST'])
 def translate():
@@ -44,23 +41,26 @@ def translate():
 
 @app.route('/vline', methods=['GET', 'POST'])
 def vline():
-    global s_code
-    data = request.args.get('text')
-    s_code += nlp_process(data)
-    return s_code
+	global NLPFunc
+	data = request.args.get('text')
+	NLPFunc.blockproc(dat)
+	#s_code += nlp_process(data)
+	return "statement Received"
 
 @app.route('/clear')
 def clear():
-    global s_code
-    s_code=""
-    return s_code
+	global NLPFunc
+	NLPFunc.wipeout()
+	return "wipeout"
 
+# Final source code is fetched here
 @app.route('/voice', methods=['GET', 'POST'])
 def voice():
-    global s_code
-    data = request.args.get('text')
-    s_code= nlp_process(data)
-    return s_code
+	global NLPFunc
+    #data = request.args.get('text')
+	NLPFunc.assemble()
+	s_code= NLPFunc.get_code()
+	return s_code
 
 @app.route('/picture',methods=['GET','POST'])
 def picture():
