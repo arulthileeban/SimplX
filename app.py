@@ -3,6 +3,7 @@ from flask import request
 from NLP import CodeSpeak
 from trans import translat
 import os
+import base64
 # -*- coding: utf-8 -*-
 app = Flask(__name__)
 
@@ -66,12 +67,14 @@ def voice():
 
 @app.route('/picture',methods=['GET','POST'])
 def picture():
-    file = request.files['file']
-    if file and allowed_file(file.filename):
-        filename=file.filename
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        s_code=ip_process(filename)
-        return s_code
+
+    fileval = request.files['file']
+	filename = request.files['filename']
+	fh = open("uploads/"+str(filename), "wb")
+	fh.write(fileval.decode('base64'))
+	fh.close()
+	s_code=ip_process(filename)
+	return s_code
 
 
 @app.route('/')
