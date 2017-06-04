@@ -4,6 +4,7 @@ import spacy
 
 class CodeSpeak():
     def __init__(self, lang):
+	print "Chosen :",lang,type(type)
         self.nlp = spacy.load('en')
         # vars - Dictionary of Variables
         self.wtn = WordsToNumbers()
@@ -33,14 +34,17 @@ class CodeSpeak():
         self.lang = lang
 
         # Assigning Header and Footer depending on Language
-        if lang == "C++":
+        if lang == "cpp":
             self.header = "#include<iostream.h>\nusing namespace std;\nint main(){\n"
-            self.footer = "return 0;}"
+            self.footer = "return 0;}";print "cpp header set",self.header
         elif lang == "Python":
-            self.footer = self.header = ""
+            self.footer = self.header = "";print "py header set",self.header
         elif lang == "Perl":
             self.header = "#!/usr/bin/perl\n"
-            self.footer = ""
+            self.footer =  "ds" ; print "perl header set"
+        else:
+            self.footer = self.header = ""
+
         # Wiping out and initialising content
         self.content = ""
 
@@ -64,11 +68,11 @@ class CodeSpeak():
     def declare_var(self, vtype, vname, vlength):
         # code_con = Initial Code Contents
         code_con = ""
-        if self.lang == "C++":
-            # Initialising integers in C++
+        if self.lang == "cpp":
+            # Initialising integers in cpp
             if not vtype == "string":
                 code_con = code_con + "\t" + vtype + " " + vname
-            # Initialising strings in C++
+            # Initialising strings in cpp
             else:
                 code_con += code_con + "\t" + "char" + " " + vname
             # Adding array length
@@ -77,7 +81,7 @@ class CodeSpeak():
             # Adding default length of char array (string)
             if vtype == "string":
                 code_con += "[50]"
-            # Adding semicolon in case of C++
+            # Adding semicolon in case of cpp
             code_con = code_con + ";"
         elif self.lang == "Python":
             if vlength > 1:
@@ -90,20 +94,20 @@ class CodeSpeak():
     def input_var(self, vtype, vname, vlength):
         # code_con = Initial Code Contents
         code_con = ""
-        if self.lang == "C++":
-            # Input integers in C++
+        if self.lang == "cpp":
+            # Input integers in cpp
             if not vtype == "string":
-                # Input an array of integers in C++
+                # Input an array of integers in cpp
                 if vlength > 1:
                     code_con = code_con + "\t" + \
                         "for (int i =0;i<" + str(vlength) + ";i++)"
                     code_con = code_con + \
                         "\n\t{" + '\tcout<<"Enter number "<<i<<":";' + \
                         "\n\t\tcin>>" + vname + "[i];" + "\n\t}"
-                # Input just one integer in C++
+                # Input just one integer in cpp
                 else:
                     code_con = code_con + "\t" + 'cout<<"Enter number :";' + "\n\tcin>>" + vname + ";"
-            # Input strings in C++
+            # Input strings in cpp
             else:
                 # Input an array of strings/2D array of characters
                 if vlength > 1:
@@ -152,14 +156,14 @@ class CodeSpeak():
     def print_var(self, vtype, vname, vlength):
         # code_con = Initial Code Contents
         code_con = ""
-        if self.lang == "C++":
-            # Printing an array in C++
+        if self.lang == "cpp":
+            # Printing an array in cpp
             if vlength > 1:
                 code_con = code_con + "\t" + \
                     "for (int i =0; i<" + str(vlength) + " ; i++)"
                 code_con = code_con + \
                     "\n\t{" + '\tcout<<' + vname + '[i];' + "\n\t}"
-            # Printing a single element in C++
+            # Printing a single element in cpp
             else:
                 code_con = code_con + "\n cout<<" + vname + ";"
         elif self.lang == "Python":
@@ -178,7 +182,7 @@ class CodeSpeak():
     def smallest(self, vtype, vname, vlength):
         # func_code = Initial Code Contents
         func_code = ""
-        if self.lang == "C++":
+        if self.lang == "cpp":
             func_code += "\tint small=99999;\n\tfor(int i=0;i<" + \
                 str(vlength) + ";i++)"
             func_code += "\n\t\tif(small>" + vname + \
@@ -195,7 +199,7 @@ class CodeSpeak():
     def largest(self, vtype, vname, vlength):
         # func_code = Initial Code Contents
         func_code = ""
-        if self.lang == "C++":
+        if self.lang == "cpp":
             func_code += "\tint great=-99999;\n\tfor(int i=0;i<" + \
                 str(vlength) + ";i++)"
             func_code += "\n\t\tif(great<" + vname + \
@@ -212,7 +216,7 @@ class CodeSpeak():
     def get_product(self, vtype, vname, vlength):
         # func_code = Initial Code Contents
         func_code = ""
-        if self.lang == "C++":
+        if self.lang == "cpp":
             func_code += "\tint product=1;\n\tfor(int i=0;i<" + \
                 str(vlength) + ";i++)"
             func_code += "\n\t\tproduct*=" + vname + "[i];\n"
@@ -229,7 +233,7 @@ class CodeSpeak():
     def get_sum(self, vtype, vname, vlength):
         # func_code = Initial Code Contents
         func_code = ""
-        if self.lang == "C++":
+        if self.lang == "cpp":
             func_code += "\tint sum=0;\n\tfor(int i=0;i<" + \
                 str(vlength) + ";i++)"
             func_code += "\n\t\tsum+=" + vname + "[i];\n"
@@ -246,7 +250,7 @@ class CodeSpeak():
 
     def functions(self, func, vname, vtype, vlength):
         func_code = ""
-        if self.lang == "C++":
+        if self.lang == "cpp":
             if func == "sort":
                 self.header = "#include<algorithm.h>\n" + self.header
                 func_code += "sorted(" + vname + "," + \
@@ -290,7 +294,7 @@ class CodeSpeak():
     '''
 
     def comment(self, sent):
-        if self.lang == "C++":
+        if self.lang == "cpp":
             self.content += "\n//" + sent + "\n"
         elif self.lang == "Python" or self.lang == "Perl":
             self.content += "\n#" + sent + "\n"
@@ -510,7 +514,7 @@ class CodeSpeak():
 '''
 from NLP import CodeSpeak
 from pprint import pprint
-c= CodeSpeak("C++")
+c= CodeSpeak("cpp")
 c.blockproc("Input 10 numbers into X")
 c.blockproc("Print the sum of X")
 c.blockproc("if X is greater than 10 then print X else print the product of X")
