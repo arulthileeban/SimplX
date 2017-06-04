@@ -5,6 +5,8 @@ app = Flask(__name__)
 
 language="C"
 
+s_code = ""
+
 app.config['UPLOAD_FOLDER'] = 'uploads/'
 
 app.config['ALLOWED_EXTENSIONS'] = set(['txt','wav', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
@@ -41,6 +43,16 @@ def translate():
     s_code=nlp_process(data)
     return s_code
 
+@app.route('/vline', methods=['GET', 'POST'])
+def vline():
+    data = request.args.get('text')
+    s_code += nlp_process(data)
+    return s_code
+
+@app.route('/clear')
+def clear():
+	s_code=""
+	return s_code
 
 @app.route('/voice', methods=['GET', 'POST'])
 def voice():
