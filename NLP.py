@@ -292,9 +292,9 @@ class CodeSpeak():
     def comment(self, sent):
         if self.lang == "C++":
             self.content += "\n//" + sent + "\n"
-        elif self.lang == "Python":
+        elif self.lang == "Python" or self.lang == "Perl":
             self.content += "\n#" + sent + "\n"
-
+    
     def init_block(self):
         func_code = "\t{"
         self.content += func_code + "\n"
