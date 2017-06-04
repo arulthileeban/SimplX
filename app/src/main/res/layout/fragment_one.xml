@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     tools:context=".OneFragment">
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
         android:gravity="top|left"
         android:textSize="17dp"
-        android:id="@+id/textSpeechInput"
+        android:id="@+id/txtSpeechInput1"
         android:textColor="@color/White"/>
     <ImageView
         android:layout_width="250dp"

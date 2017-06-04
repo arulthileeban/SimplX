@@ -67,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
         r1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {/*
-                    String url = "http://ec2-52-36-236-91.us-west-2.compute.amazonaws.com:5000/voice?text="+"C++";
+                try {
+                    String url = "http://ec2-52-36-236-91.us-west-2.compute.amazonaws.com:5000/language?lang="+"cpp";
                     run(url);
                     Thread thread1 = new Thread(new Runnable(){
                         @Override
@@ -88,10 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                     });
-                    thread1.start();*/
-                    Intent algo = new Intent(MainActivity.this, algorithm.class);
-                    algo.putExtra("type", "c++");
-                    startActivity(algo);
+                    thread1.start();
                 }catch (Exception e){
 
                 }
@@ -100,19 +97,61 @@ public class MainActivity extends AppCompatActivity {
         r2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent algo =new Intent(MainActivity.this,algorithm.class);
-                algo.putExtra("type","python");
-                startActivity(algo);
+
+                try {
+                    String url = "http://ec2-52-36-236-91.us-west-2.compute.amazonaws.com:5000/language?lang="+"Python";
+                    run(url);
+                    Thread thread1 = new Thread(new Runnable(){
+                        @Override
+                        public void run(){
+                            while (respdata.equals("")){}
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+
+                                    Intent algo = new Intent(MainActivity.this, algorithm.class);
+                                    algo.putExtra("type", "python");
+                                    startActivity(algo);
+
+                                }
+                            });
+
+
+                        }
+                    });
+                    thread1.start();
+                }catch (Exception e){
+
+                }
             }
         });
         r3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) {try {
+                String url = "http://ec2-52-36-236-91.us-west-2.compute.amazonaws.com:5000/language?lang="+"Perl";
+                run(url);
+                Thread thread1 = new Thread(new Runnable(){
+                    @Override
+                    public void run(){
+                        while (respdata.equals("")){}
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
 
-                Intent algo =new Intent(MainActivity.this,algorithm.class);
-                algo.putExtra("type","perl");
-                startActivity(algo);
+                                Intent algo = new Intent(MainActivity.this, algorithm.class);
+                                algo.putExtra("type", "perl");
+                                startActivity(algo);
 
+                            }
+                        });
+
+
+                    }
+                });
+                thread1.start();
+            }catch (Exception e){
+
+            }
             }
         });
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -161,19 +200,91 @@ public class MainActivity extends AppCompatActivity {
         r1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
+                    String url = "http://ec2-52-36-236-91.us-west-2.compute.amazonaws.com:5000/language?lang="+"cpp";
+                    run(url);
+                    Thread thread1 = new Thread(new Runnable(){
+                        @Override
+                        public void run(){
+                            while (respdata.equals("")){}
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
 
+                                    Intent flow = new Intent(MainActivity.this, flowchart.class);
+                                    flow.putExtra("type", "c++");
+                                    startActivity(flow);
+
+                                }
+                            });
+
+
+                        }
+                    });
+                    thread1.start();
+                }catch (Exception e){
+
+                }
             }
         });
         r2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
+                    String url = "http://ec2-52-36-236-91.us-west-2.compute.amazonaws.com:5000/language?lang="+"Python";
+                    run(url);
+                    Thread thread1 = new Thread(new Runnable(){
+                        @Override
+                        public void run(){
+                            while (respdata.equals("")){}
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
 
+                                    Intent flow = new Intent(MainActivity.this, flowchart.class);
+                                    flow.putExtra("type", "Python");
+                                    startActivity(flow);
+
+                                }
+                            });
+
+
+                        }
+                    });
+                    thread1.start();
+                }catch (Exception e){
+
+                }
             }
         });
         r3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
+                    String url = "http://ec2-52-36-236-91.us-west-2.compute.amazonaws.com:5000/language?lang="+"Perl";
+                    run(url);
+                    Thread thread1 = new Thread(new Runnable(){
+                        @Override
+                        public void run(){
+                            while (respdata.equals("")){}
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
 
+                                    Intent flow = new Intent(MainActivity.this, flowchart.class);
+                                    flow.putExtra("type", "Perl");
+                                    startActivity(flow);
+
+                                }
+                            });
+
+
+                        }
+                    });
+                    thread1.start();
+                }catch (Exception e){
+
+                }
             }
         });
 

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pure_black"
+    tools:context="com.example.shrika.simplx.flowchart">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/browseArea"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:paddingTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/ripple2"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="45dp"
+            android:text=""
+            android:textSize="20dp"
+            android:textColor="@color/White"
+            android:id="@+id/Sourceimg"
+
+            />
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="source code :"
+        android:id="@+id/sourceCode1"
+        android:textSize="23dp"
+        android:textColor="@color/White"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="26dp"/>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="4dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/White"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="57dp"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/codeImage1"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:visibility="visible"
+        android:src="@drawable/colours1"
+        android:layout_above="@id/browseArea"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/background4"
+        android:id="@+id/browseArea">
+
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentLeft="true"
+            android:clickable="true"
+            android:src="@drawable/picture"
+            android:id="@+id/button4"
+            android:onClick="onClick2"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="70dp"
+            android:src="@drawable/cam1"/>
+    </RelativeLayout>
+</RelativeLayout>

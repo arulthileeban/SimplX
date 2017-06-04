@@ -50,6 +50,6 @@
             android:textColor="@color/White"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="40dp"
-            android:text="PHP"/>
+            android:text="Perl"/>
 
 </RelativeLayout>

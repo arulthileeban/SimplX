@@ -19,8 +19,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Response;
 
 /**
  * Created by adminlap on 3/6/17.
@@ -30,9 +36,11 @@ public class OneFragment extends Fragment implements View.OnClickListener{
         // Required empty public constructor
 
     }
-    TextView srccode,txt;
+
+    private final OkHttpClient client = new OkHttpClient();
+    TextView srccode,txt,txtSpeechInput1;
     EditText txtSpeechInput;
-    private ImageView btnSpeak;
+    private ImageView btnSpeak,upline,tick,clear;
     Animation blink;
     ImageView codeImage;
     String respdata="";
@@ -54,10 +62,82 @@ public class OneFragment extends Fragment implements View.OnClickListener{
                 String.format(Locale.US, "fonts/%s", "Kelvetica.otf"));
         blink = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),R.anim.blink);
         btnSpeak = (ImageView) getActivity().findViewById(R.id.btnSpeak);
+        upline = (ImageView) getActivity().findViewById(R.id.uploadline);
+        clear = (ImageView) getActivity().findViewById(R.id.clear);
         codeImage = (ImageView)view.findViewById(R.id.alginput);
-        txtSpeechInput = (EditText) view.findViewById(R.id.textSpeechInput);
+        txtSpeechInput = (EditText) getActivity().findViewById(R.id.textSpeechInput);
+        txtSpeechInput1 = (TextView) view.findViewById(R.id.txtSpeechInput1);
         txtSpeechInput.setTypeface(custom);
+
+        txtSpeechInput1.setTypeface(custom);
         btnSpeak.setOnClickListener(this);
+        upline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    String url = "http://ec2-52-36-236-91.us-west-2.compute.amazonaws.com:5000/vline?text="+txtSpeechInput.getText().toString().toLowerCase();
+                    run(url);
+                    Thread thread1 = new Thread(new Runnable(){
+                        @Override
+                        public void run(){
+                            while (respdata.equals("")){}
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+
+
+                                    cmp=cmp+"\n"+txtSpeechInput.getText().toString();
+                                    codeImage.clearAnimation();
+                                    codeImage.setVisibility(View.GONE);
+                                    txtSpeechInput1.setVisibility(View.VISIBLE);
+                                    txtSpeechInput1.setText(cmp);
+
+                                }
+                            });
+
+
+                        }
+                    });
+                    thread1.start();
+                }catch (Exception e){
+
+                }
+            }
+        });
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    String url = "http://ec2-52-36-236-91.us-west-2.compute.amazonaws.com:5000/clear";
+                    run(url);
+                    Thread thread1 = new Thread(new Runnable(){
+                        @Override
+                        public void run(){
+                            while (respdata.equals("")){}
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+
+
+                                    cmp=cmp+"\n"+txtSpeechInput.getText().toString();
+                                    codeImage.clearAnimation();
+                                    codeImage.setVisibility(View.VISIBLE);
+                                    txtSpeechInput1.setVisibility(View.VISIBLE);
+                                    cmp="";
+                                    txtSpeechInput1.setText(cmp);
+
+                                }
+                            });
+
+
+                        }
+                    });
+                    thread1.start();
+                }catch (Exception e){
+
+                }
+            }
+        });
         return view;
     }
     @Override
@@ -91,16 +171,36 @@ public class OneFragment extends Fragment implements View.OnClickListener{
 
                     result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    cmp=cmp+result.get(0);
-                    codeImage.clearAnimation();
-                    codeImage.setVisibility(View.GONE);
-                    txtSpeechInput.setVisibility(View.VISIBLE);
-                    txtSpeechInput.setText(cmp);
+                    txtSpeechInput.setText(result.get(0));
                 }
                 break;
             }
 
         }
     }
+    public void run(String Url) throws Exception {
 
-}
+        okhttp3.Request request = new okhttp3.Request.Builder()
+                .url(Url)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Toast.makeText(getContext(), "request failed", Toast.LENGTH_LONG).show();
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
+
+                respdata = response.body().string();
+                System.out.println(respdata);
+
+
+            }
+        });
+    }
+
+    }
