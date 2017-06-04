@@ -236,21 +236,15 @@ def getFinal(name):
         #fin = cv2.drawContours(cp, [approx], 0, (255,0,0), 1)
 
     #finalizing
-
-    cv2.imwrite("OutPutImages/finalout.jpg", fin)
-
     cv2.destroyAllWindows()
     print "Final Results:\n", repo
 
     #Generating Final code in Natural Language to send to NLP Section
-
     code = repository(repo, count, arrows, arcount) # THIS VARIABLE "code" CONTAINS THE FINAL CODE.
     print code
+    cv2.imwrite("OutPutImages/ProcessedImage.jpg", fin)
     return code
 
 if __name__ == '__main__':
     getFinal("Flowmain.jpg")
-    '''
-    getFinal("flow2.jpg")
-    getFinal("flow3.jpg")
-    '''
+    
