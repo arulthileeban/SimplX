@@ -1,7 +1,9 @@
 from flask import Flask
 from flask import request
 from NLP import CodeSpeak
+from trans import translate
 import os
+# -*- coding: utf-8 -*-
 app = Flask(__name__)
 
 language="C"
@@ -19,7 +21,7 @@ def ip_process(data):
 
 def trans_process(data):
 #Insert Translate Function here
-    trans_data=""
+    trans_data=translate(data)
     return trans_data
 
 def allowed_file(filename):
