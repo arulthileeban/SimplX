@@ -1,0 +1,3161 @@
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 213-485-201
+/home/ubuntu/SimplX/imageProcessing.py:127: FutureWarning: comparison to `None` will result in an elementwise object comparison in the future.
+  if im == None:
+
+(out:5573): Gtk-WARNING **: cannot open display: 
+Flowmain2.jpg
+python: can't open file 'air.py': [Errno 2] No such file or directory
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 213-485-201
+106.208.120.188 - - [04/Jun/2017 09:48:43] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 09:48:46] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 09:48:47] "[37mGET /voice HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 09:48:51] "[37mGET /clear HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 09:48:58] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+/home/ubuntu/SimplX/imageProcessing.py:127: FutureWarning: comparison to `None` will result in an elementwise object comparison in the future.
+  if im == None:
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+	int Array[10];
+	for (int i =0;i<10;i++)
+	{	cout<<"Enter number "<<i<<":";
+		cin>>Array[i];
+	}
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+Flowmain2.jpg
+input
+<type 'dict'>
+regions : 
+	boundingBox :  24,76,384,41
+	lines : 
+		boundingBox :  24,76,384,41
+		words : 
+			boundingBox :  24,79,88,38
+			text :  input
+			boundingBox :  124,87,18,21
+			text :  a
+			boundingBox :  155,76,133,32
+			text :  number
+			boundingBox :  299,79,66,29
+			text :  into
+			boundingBox :  378,79,30,29
+			text :  X
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}} 
+
+
+stopped
+1 vertical
+decision
+<type 'dict'>
+regions : 
+	boundingBox :  64,120,158,54
+	lines : 
+		boundingBox :  64,120,158,27
+		words : 
+			boundingBox :  64,120,18,21
+			text :  if
+			boundingBox :  89,122,21,19
+			text :  X
+			boundingBox :  116,122,19,19
+			text :  is
+			boundingBox :  143,124,79,23
+			text :  greater
+		boundingBox :  100,154,85,20
+		words : 
+			boundingBox :  100,154,49,20
+			text :  than
+			boundingBox :  159,155,26,19
+			text :  15
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}} 
+
+
+operation
+<type 'dict'>
+regions : 
+	boundingBox :  18,66,191,86
+	lines : 
+		boundingBox :  18,66,191,40
+		words : 
+			boundingBox :  18,66,153,37
+			text :  increment
+			boundingBox :  181,78,28,28
+			text :  X
+		boundingBox :  67,112,86,40
+		words : 
+			boundingBox :  67,112,40,40
+			text :  by
+			boundingBox :  118,119,35,28
+			text :  15
+textAngle :  -4.0
+orientation :  Up
+language :  en
+{'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}} 
+
+
+stopped
+2 horizontal
+stopped
+3 vertical
+stopped
+4 vertical
+operation
+<type 'dict'>
+regions : 
+	boundingBox :  28,78,174,87
+	lines : 
+		boundingBox :  28,78,174,30
+		words : 
+			boundingBox :  28,78,174,30
+			text :  decrement
+		boundingBox :  63,126,111,39
+		words : 
+			boundingBox :  63,128,29,28
+			text :  X
+			boundingBox :  103,126,42,39
+			text :  by
+			boundingBox :  156,128,18,28
+			text :  2
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}} 
+
+
+output
+<type 'dict'>
+regions : 
+	boundingBox :  108,77,172,52
+	lines : 
+		boundingBox :  108,77,172,52
+		words : 
+			boundingBox :  108,77,114,52
+			text :  print
+			boundingBox :  238,77,42,39
+			text :  X
+textAngle :  0.0
+orientation :  Up
+language :  de
+{'type': 'output', 'words': [u'print', u'X']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u106.208.120.188 - - [04/Jun/2017 09:49:04] "[37mGET /picture?text=Flowmain2.jpg HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 09:53:17] "[1m[35mGET /language?lang=cpp HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/SimplX/app.py", line 38, in language
+    NLPFunc = CodeSpeak(language)
+  File "/home/ubuntu/SimplX/NLP.py", line 8, in __init__
+    self.nlp = spacy.load('en')
+  File "/usr/local/lib/python2.7/dist-packages/spacy/__init__.py", line 40, in load
+    return cls(**overrides)
+  File "/usr/local/lib/python2.7/dist-packages/spacy/en/__init__.py", line 34, in __init__
+    Language.__init__(self, **overrides)
+  File "/usr/local/lib/python2.7/dist-packages/spacy/language.py", line 279, in __init__
+    if 'parser' not in overrides \
+  File "/usr/local/lib/python2.7/dist-packages/spacy/language.py", line 100, in create_parser
+    return DependencyParser.load(nlp.path / 'deps', nlp.vocab, **cfg)
+  File "spacy/syntax/parser.pyx", line 156, in spacy.syntax.parser.Parser.load (spacy/syntax/parser.cpp:7073)
+    
+  File "thinc/linear/avgtron.pyx", line 104, in thinc.linear.avgtron.AveragedPerceptron.load (thinc/linear/avgtron.cpp:3514)
+    
+  File "preshed/maps.pyx", line 34, in preshed.maps.PreshMap.__init__ (preshed/maps.cpp:1193)
+    
+  File "preshed/maps.pyx", line 109, in preshed.maps.map_init (preshed/maps.cpp:3058)
+    
+  File "cymem/cymem.pyx", line 42, in cymem.cymem.Pool.alloc (cymem/cymem.cpp:1091)
+    
+MemoryError: Error assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytes
+106.208.120.188 - - [04/Jun/2017 09:53:23] "[1m[35mGET /language?lang=cpp HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/SimplX/app.py", line 38, in language
+    NLPFunc = CodeSpeak(language)
+  File "/home/ubuntu/SimplX/NLP.py", line 8, in __init__
+    self.nlp = spacy.load('en')
+  File "/usr/local/lib/python2.7/dist-packages/spacy/__init__.py", line 40, in load
+    return cls(**overrides)
+  File "/usr/local/lib/python2.7/dist-packages/spacy/en/__init__.py", line 34, in __init__
+    Language.__init__(self, **overrides)
+  File "/usr/local/lib/python2.7/dist-packages/spacy/language.py", line 279, in __init__
+    if 'parser' not in overrides \
+  File "/usr/local/lib/python2.7/dist-packages/spacy/language.py", line 100, in create_parser
+    return DependencyParser.load(nlp.path / 'deps', nlp.vocab, **cfg)
+  File "spacy/syntax/parser.pyx", line 156, in spacy.syntax.parser.Parser.load (spacy/syntax/parser.cpp:7073)
+    
+  File "thinc/linear/avgtron.pyx", line 104, in thinc.linear.avgtron.AveragedPerceptron.load (thinc/linear/avgtron.cpp:3514)
+    
+  File "preshed/maps.pyx", line 34, in preshed.maps.PreshMap.__init__ (preshed/maps.cpp:1193)
+    
+  File "preshed/maps.pyx", line 109, in preshed.maps.map_init (preshed/maps.cpp:3058)
+    
+  File "cymem/cymem.pyx", line 42, in cymem.cymem.Pool.alloc (cymem/cymem.cpp:1091)
+    
+MemoryError: Error assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytesError assigning 33554432 bytes
+106.208.120.188 - - [04/Jun/2017 09:53:37] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}, 5: {'cy': 1043, 'cx': 765, 'type': 'output', 'words': [u'print', u'X']}} 
+
+
+stopped
+5 horizontal
+Final Results:
+{1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}, 5: {'cy': 1043, 'cx': 765, 'type': 'output', 'words': [u'print', u'X']}}
+
+
+
+{1: {'cx': 318, 'cy': 358, 'used': 0, 'orientation': 'vertical'}, 2: {'cx': 570, 'cy': 588, 'used': 0, 'orientation': 'horizontal'}, 3: {'cx': 767, 'cy': 835, 'used': 0, 'orientation': 'vertical'}, 4: {'cx': 318, 'cy': 840, 'used': 0, 'orientation': 'vertical'}, 5: {'cx': 512, 'cy': 1042, 'used': 0, 'orientation': 'horizontal'}} 
+
+
+1!1^2
+2-2->3
+2!4^4
+3!3^5
+4-5->5
+1 : 
+	no :  None
+	root :  1
+	cy :  161
+	cx :  318
+	words : 
+			input
+			a
+			number
+			into
+			X
+	yes :  2
+	type :  input
+2 : 
+	no :  3
+	root :  0
+	cy :  589
+	cx :  318
+	words : 
+			if
+			X
+			is
+			greater
+			than
+			15
+	yes :  4
+	type :  if
+3 : 
+	no :  None
+	root :  0
+	cy :  589
+	cx :  767
+	words : 
+			increment
+			X
+			by
+			15
+	yes :  5
+	type :  operation
+4 : 
+	no :  1
+	root :  0
+	cy :  1041
+	cx :  319
+	words : 
+			decrement
+			X
+			by
+			2
+	yes :  1
+	type :  endif
+5 : 
+	no :  None
+	root :  0
+	cy :  1043
+	cx :  765
+	words : 
+			print
+			X
+	yes :  None
+	type :  output
+None
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+X is greater than 15 [u'decrement X by 2'] [u'increment X by 15']
+{'type': 'normal', 'statement': u'input a number into X'}
+{}
+You []
+must []
+input [number, into]
+a []
+number []
+into [X]
+X []
+input You must input a number into X
+Intent found : input
+input 4937 --- ROOT a number
+a number
+1
+into [X]
+Vars is set
+{'length': 1, 'type': 'int'}
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+
+{'status': 'false', 'true': [u'decrement X by 2'], 'false': [u'increment X by 15'], 'type': 'condition', 'condition': u'X is greater than 15'}
+decrement X by 2
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+decrement [X]
+X [by]
+by [2]
+2 []
+decrement You must decrement X by 2
+Intent found : -
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+increment [X]
+X [by]
+by [15]
+15 []
+increment You must increment X by 15
+Intent found : +
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+
+{'type': 'normal', 'statement': u'print X'}
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+print [X]
+X []
+print You must print X
+Intent found : output
+None X --- X
+varname = X
+varname is = {'length': 1, 'type': 'int'}
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+	}
+
+ cout<<X;
+
+//X is not an array
+
+#include<iostream.h>
+using namespace std;
+int main(){
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+	}
+
+ cout<<X;
+
+//X is not an array
+return 0;}
+Chosen : cpp <type 'type'>
+Chosen : cpp <type 'type'>
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+Flowmain2.jpg
+input
+<type 'dict'>
+regions : 
+	boundingBox :  24,76,384,41
+	lines : 
+		boundingBox :  24,76,384,41
+		words : 
+			boundingBox :  24,79,88,38
+			text :  input
+			boundingBox :  124,87,18,21
+			text :  a
+			boundingBox :  155,76,133,32
+			text :  number
+			boundingBox :  299,79,66,29
+			text :  into
+			boundingBox :  378,79,30,29
+			text :  X
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}} 
+
+
+stopped
+1 vertical
+decision
+<type 'dict'>
+regions : 
+	boundingBox :  64,120,158,54
+	lines : 
+		boundingBox :  64,120,158,27
+		words : 
+			boundingBox :  64,120,18,21
+			text :  if
+			boundingBox :  89,122,21,19
+			text :  X
+			boundingBox :  116,122,19,19
+			text :  is
+			boundingBox :  143,124,79,23
+			text :  greater
+		boundingBox :  100,154,85,20
+		words : 
+			boundingBox :  100,154,49,20
+			text :  than
+			boundingBox :  159,155,26,19
+			text :  15
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}} 
+
+
+operation
+<type 'dict'>
+regions : 
+	boundingBox :  18,66,191,86
+	lines : 
+		boundingBox :  18,66,191,40
+		words : 
+			boundingBox :  18,66,153,37
+			text :  increment
+			boundingBox :  181,78,28,28
+			text :  X
+		boundingBox :  67,112,86,40
+		words : 
+			boundingBox :  67,112,40,40
+			text :  by
+			boundingBox :  118,119,35,28
+			text :  15
+textAngle :  -4.0
+orientation :  Up
+language :  en
+{'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}} 
+
+
+stopped
+2 horizontal
+stopped
+3 vertical
+stopped
+4 vertical
+operation
+<type 'dict'>
+regions : 
+	boundingBox :  28,78,174,87
+	lines : 
+		boundingBox :  28,78,174,30
+		words : 
+			boundingBox :  28,78,174,30
+			text :  decrement
+		boundingBox :  63,126,111,39
+		words : 
+			boundingBox :  63,128,29,28
+			text :  X
+			boundingBox :  103,126,42,39
+			text :  by
+			boundingBox :  156,128,18,28
+			text :  2
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}} 
+
+
+output
+<type 'dict'>
+regions : 
+	boundingBox :  108,77,172,52
+	lines : 
+		boundingBox :  108,77,172,52
+		words : 
+			boundingBox :  108,77,114,52
+			text :  print
+			boundingBox :  238,77,42,39
+			text :  X
+textAngle :  0.0
+orientation :  Up
+language :  de
+{'type': 'output', 'words': [u'print', u'X']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}, 5: {'cy': 1043, 'cx': 765, 'type': 'output', 'words': [u'print', u'X']}} 
+
+
+stopped
+5 horizontal
+Final Results:
+{1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}, 5: {'cy': 1043, 'cx': 765, 'type': 'output', 'words': [u'print', u'X']}}
+
+
+
+{1: {'cx': 318, 'cy': 358, 'used': 0, 'orientation': 'vertical'}, 2: {'cx': 570, 'cy': 588, 'used': 0, 'orientation': 'horizontal'}, 3: {'cx': 767, 'cy'106.208.120.188 - - [04/Jun/2017 09:53:49] "[37mGET /picture?text=Flowmain2.jpg HTTP/1.1[0m" 200 -
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 213-485-201
+106.208.120.188 - - [04/Jun/2017 10:14:41] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 10:14:46] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 10:14:51] "[37mGET /voice HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 10:14:57] "[37mGET /clear HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 10:20:55] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 10:20:59] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 10:21:02] "[37mGET /voice HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 10:21:06] "[37mGET /clear HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 11:18:22] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 11:19:30] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 11:19:59] "[37mGET /vline?text=input%20a%20number%20into%20X HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 11:20:44] "[37mGET /vline?text=multiply%20X%20by%2010 HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 11:20:48] "[37mGET /voice HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 11:21:02] "[37mGET /vline?text=multiply%20X%20by%2010 HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 11:22:43] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+/home/ubuntu/SimplX/imageProcessing.py:127: FutureWarning: comparison to `None` will result in an elementwise object comparison in the future.
+  if im == None:
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+	int Array[10];
+	for (int i =0;i<10;i++)
+	{	cout<<"Enter number "<<i<<":";
+		cin>>Array[i];
+	}
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+	int Array[10];
+	for (int i =0;i<10;i++)
+	{	cout<<"Enter number "<<i<<":";
+		cin>>Array[i];
+	}
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+{'type': 'normal', 'statement': u'input a number into X'}
+{}
+You []
+must []
+input [number, into]
+a []
+number []
+into [X]
+X []
+input You must input a number into X
+Intent found : input
+input 4937 --- ROOT a number
+a number
+1
+into [X]
+Vars is set
+{'length': 1, 'type': 'int'}
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+
+{'type': 'normal', 'statement': u'multiply X by 10'}
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+multiply [X]
+X [by]
+by [10]
+10 []
+multiply You must multiply X by 10
+Intent found : *
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	X = X * 10;
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+Flowmain2.jpg
+input
+<type 'dict'>
+regions : 
+	boundingBox :  24,76,384,41
+	lines : 
+		boundingBox :  24,76,384,41
+		words : 
+			boundingBox :  24,79,88,38
+			text :  input
+			boundingBox :  124,87,18,21
+			text :  a
+			boundingBox :  155,76,133,32
+			text :  number
+			boundingBox :  299,79,66,29
+			text :  into
+			boundingBox :  378,79,30,29
+			text :  X
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}} 
+
+
+stopped
+1 vertical
+decision
+<type 'dict'>
+regions : 
+	boundingBox :  64,120,158,54
+	lines : 
+		boundingBox :  64,120,158,27
+		words : 
+			boundingBox :  64,120,18,21
+			text :  if
+			boundingBox :  89,122,21,19
+			text :  X
+			boundingBox :  116,122,19,19
+			text :  is
+			boundingBox :  143,124,79,23
+			text :  greater
+		boundingBox :  100,154,85,20
+		words : 
+			boundingBox :  100,154,49,20
+			text :  than
+			boundingBox :  159,155,26,19
+			text :  15
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}} 
+
+
+operation
+<type 'dict'>
+regions : 
+	boundingBox :  18,66,191,86
+	lines : 
+		boundingBox :  18,66,191,40
+		words : 
+			boundingBox :  18,66,153,37
+			text :  increment
+			boundingBox :  181,78,28,28
+			text :  X
+		boundingBox :  67,112,86,40
+		words : 
+			boundingBox :  67,112,40,40
+			text :  by
+			boundingBox :  118,119,35,28
+			text :  15
+textAngle :  -4.0
+orientation :  Up
+language :  en
+{'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}} 
+
+
+stopped
+2 horizontal
+stopped
+3 vertical
+stopped
+4 vertical
+operation
+<type 'dict'>
+regions : 
+	boundingBox :  28,78,174,87
+	lines : 
+		boundingBox :  28,78,174,30
+		words : 
+			boundingBox :  28,78,174,30
+			text :  decrement
+		boundingBox :  63,126,111,39
+		words : 
+			boundingBox :  63,128,29,28
+			text :  X
+			boundingBox :  103,126,42,39
+			text :  by
+			boundingBox :  156,128,18,28
+			text :  2
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}} 
+
+
+output
+<type 'dict'>
+regions : 
+	boundingBox :  108,77,172,52
+	lines : 
+		boundingBox :  108,77,172,52
+		words : 
+			boundingBox :  108,77,114,52
+			text :  print
+			boundingBox :  238,77,42,39
+			text :  X
+textAngle :  0.0
+orientation :  Up
+language :  de
+{'type': 'output', 'words': [u'print', u'X']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}, 5: {'cy': 1043, 'cx': 765, 'type': 'output', 'words': [u'print', u'X']}} 
+
+
+stopped
+5 horizontal
+Final Results:
+{1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}, 5: {'cy': 1043, 'cx': 765, 'type': 'output', 'words': [u'print', u'X']}}
+
+
+
+{1: {'cx': 318, 'cy': 358, 'used': 0, 'orientation': 'vertical'}, 2: {'cx': 570, 'cy': 588, 'used': 0, 'orientation': 'horizontal'}, 3: {'cx': 767, 'cy': 835, 'used': 0, 'orientation': 'vertical'}, 4: {'cx': 318, 'cy': 840, 'used': 0, 'orientation': 'vertical'}, 5: {'cx': 512, 'cy': 1042, 'used': 0, 'orientation': 'horizontal'}} 
+
+
+1!1^2
+2-2->3
+2!4^4
+3!3^5
+4-5->5
+1 : 
+	no :  None
+	root :  1
+	cy :  161
+	cx :  318
+	words : 
+			input
+			a
+			number
+			into
+			X
+	yes :  2
+	type :  input
+2 : 
+	no :  3
+	root :  0
+	cy :  589
+	cx :  318
+	words : 
+			if
+			X
+			is
+			greater
+			than
+			15
+	yes :  4
+	type :  if
+3 : 
+	no :  None
+	root :  0
+	cy :  589
+	cx :  767
+	words : 
+			increment
+			X
+			by
+			15
+	yes :  5
+	type :  operation
+4 : 
+	no :  1
+	root :  0
+	cy :  1041
+	cx :  319
+	words : 
+			decrement
+			X
+			by
+			2
+	yes :  1
+	type :  endif
+5 : 
+	no :  None
+	root :  0
+	cy :  1043
+	cx :  765
+	words : 
+			print
+			X
+	yes :  None
+	type :  output
+None
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+X is greater than 15 [u'decrement X by 2'] [u'increment X by 15']
+{'type': 'normal', 'statement': u'input a number into X'}
+{}
+You []
+must []
+input [number, into]
+a []
+number []
+into [X]
+X []
+input You must input a number into X
+Intent found : input
+input 4937 --- ROOT a number
+a number
+1
+into [X]
+Vars is set
+{'length': 1, 'type': 'int'}
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+
+{'status': 'false', 'true': [u'decrement X by 2'], 'false': [u'increment X by 15'], 'type': 'condition', 'condition': u'X is greater than 15'}
+decrement X by 2
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+decrement [X]
+X [by]
+by [2]
+2 []
+decrement You must decrement X by 2
+Intent found : -
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+increment [X]
+X [by]
+by [15]
+15 []
+increment You must increment X by 15
+Intent fo106.208.120.188 - - [04/Jun/2017 11:22:51] "[37mGET /picture?text=Flowmain2.jpg HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:27:48] "[37mGET /language?lang=Python HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:28:17] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:28:20] "[37mGET /voice HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:30:04] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:30:06] "[37mGET /voice HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:30:42] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:30:48] "[37mGET /language?lang=Python HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:30:48] "[37mGET /voice HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:30:48] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:30:50] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:30:51] "[37mGET /voice HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:31:03] "[37mGET /clear HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:31:12] "[37mGET /language?lang=Perl HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:31:12] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:31:19] "[37mGET /voice HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:31:54] "[37mGET /clear HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:32:17] "[37mGET /language?lang=Python HTTP/1.1[0m" 200 -
+und : +
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+
+{'type': 'normal', 'statement': u'print X'}
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+print [X]
+X []
+print You must print X
+Intent found : output
+None X --- X
+varname = X
+varname is = {'length': 1, 'type': 'int'}
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+	}
+
+ cout<<X;
+
+//X is not an array
+
+#include<iostream.h>
+using namespace std;
+int main(){
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+	}
+
+ cout<<X;
+
+//X is not an array
+return 0;}
+Chosen : Python <type 'type'>
+py header set 
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+Array = []
+
+for i in xrange(10)
+	Array.append(input('Enter number'+str(i)))
+
+
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{'Array': {'length': 10, 'type': 'int'}}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+Array = []
+
+for i in xrange(10)
+	Array.append(input('Enter number'+str(i)))
+
+Array = []
+
+for i in xrange(10)
+	Array.append(input('Enter number'+str(i)))
+
+
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{'Array': {'length': 10, 'type': 'int'}}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+Array = []
+
+for i in xrange(10)
+	Array.append(input('Enter number'+str(i)))
+
+Array = []
+
+for i in xrange(10)
+	Array.append(input('Enter number'+str(i)))
+
+Array = []
+
+for i in xrange(10)
+	Array.append(input('Enter number'+str(i)))
+
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+Chosen : Python <type 'type'>
+py header set 
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+Array = []
+
+for i in xrange(10)
+	Array.append(input('Enter number'+str(i)))
+
+
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{'Array': {'length': 10, 'type': 'int'}}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+Array = []
+
+for i in xrange(10)
+	Array.append(input('Enter number'+str(i)))
+
+Array = []
+
+for i in xrange(10)
+	Array.append(input('Enter number'+str(i)))
+
+
+Chosen : Perl <type 'type'>
+perl header set
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+@Array = ();
+
+$n=10;
+while ( $n >0 ){
+$val= <> ;
+push(@Array,val);
+$n = $n - 1;}
+
+Chosen : Python <type 'type'>
+py header set 
+Flowmain2.jpg
+input
+<type 'dict'>
+regions : 
+	boundingBox :  24,76,384,41
+	lines : 
+		boundingBox :  24,76,384,41
+		words : 
+			boundingBox :  24,79,88,38
+			text :  input
+			boundingBox :  124,87,18,21
+			text :  a
+			boundingBox :  155,76,133,32
+			text :  number
+			boundingBox :  299,79,66,29
+			text :  into
+			boundingBox :  378,79,30,29
+			text :  X
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}} 
+
+
+stopped
+1 vertical
+decision
+<type 'dict'>
+regions : 
+	boundingBox :  64,120,158,54
+	lines : 
+		boundingBox :  64,120,158,27
+		words : 
+			boundingBox :  64,120,18,21
+			text :  if
+			boundingBox :  89,122,21,19
+			text :  X
+			boundingBox :  116,122,19,19
+			text :  is
+			boundingBox :  143,124,79,23
+			text :  greater
+		boundingBox :  100,154,85,20
+		words : 
+			boundingBox :  100,154,49,20
+			text :  than
+			boundingBox :  159,155,26,19
+			text :  15
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}} 
+
+
+operation
+<type 'dict'>
+regions : 
+	boundingBox :  18,66,191,86
+	lines : 
+		boundingBox :  18,66,191,40
+		words : 
+			boundingBox :  18,66,153,37
+			text :  increment
+			boundingBox :  181,78,28,28
+			text :  X
+		boundingBox :  67,112,86,40
+		words : 
+			boundingBox :  67,112,40,40
+			text :  by
+			boundingBox :  118,119,35,28
+			text :  15
+textAngle :  -4.0
+orientation :  Up
+language :  en
+{'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}} 
+
+
+stopped
+2 horizontal
+stopped
+3 vertical
+stopped
+4 vertical
+operation
+<type 'dict'>
+regions : 
+	boundingBox :  28,78,174,87
+	lines : 
+		boundingBox :  28,78,174,30
+		words : 
+			boundingBox :  28,78,174,30
+			text :  decrement
+		boundingBox :  63,126,111,39
+		words : 
+			boundingBox :  63,128,29,28
+			text :  X
+			boundingBox :  103,126,42,39
+			text :  by
+			boundingBox :  156,128,18,28
+			text :  2
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}} 
+
+
+output
+<type 'dict'>
+regions : 
+	boundingBox :  108,77,172,52
+	lines : 
+		boundingBox :  108,77,172,52
+		words : 
+			boundingBox :  108,77,114,52
+			text :  print
+			boundingBox :  238,77,42,39
+			text :  X
+textAngle :  0.0
+orientation :  Up
+language :  de
+{'type': 'output', 'words': [u'print', u'X']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}, 5: {'cy': 1043, 'cx': 765, 'type': 'output', 'words': [u'print', u'X']}} 
+
+
+stopped
+5 horizontal
+Final Results:
+{1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}, 5: {'cy': 1043, 'cx': 765, 'type': 'output', 'words': [u'print', u'X']}}
+
+
+
+{1: {'cx': 318, 'cy': 358, 'used': 0, 'orientation': 'vertical'}, 2: {'cx': 570, 'cy': 588, 'us106.208.120.188 - - [04/Jun/2017 13:32:22] "[37mGET /picture?text=Flowmain2.jpg HTTP/1.1[0m" 200 -
+106.208.120.188 - - [04/Jun/2017 13:34:04] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+212.92.115.17 - - [05/Jun/2017 08:49:26] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00+&\xe0\x00\x00\x00\x00\x00Cookie:')
+212.92.115.17 - - [05/Jun/2017 08:49:26] "[1m[31m  +&à     Cookie: mstshash=hello[0m" 400 -
+212.92.115.17 - - [05/Jun/2017 09:59:06] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00+&\xe0\x00\x00\x00\x00\x00Cookie:')
+212.92.115.17 - - [05/Jun/2017 09:59:06] "[1m[31m  +&à     Cookie: mstshash=hello[0m" 400 -
+5.188.211.68 - - [05/Jun/2017 21:34:31] "[37mGET / HTTP/1.0[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:45:11] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:45:21] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:45:37] "[37mGET /vline?text=print%20sum%20of%20the%20Array HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:45:38] "[37mGET /voice HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:46:28] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+ed': 0, 'orientation': 'horizontal'}, 3: {'cx': 767, 'cy': 835, 'used': 0, 'orientation': 'vertical'}, 4: {'cx': 318, 'cy': 840, 'used': 0, 'orientation': 'vertical'}, 5: {'cx': 512, 'cy': 1042, 'used': 0, 'orientation': 'horizontal'}} 
+
+
+1!1^2
+2-2->3
+2!4^4
+3!3^5
+4-5->5
+1 : 
+	no :  None
+	root :  1
+	cy :  161
+	cx :  318
+	words : 
+			input
+			a
+			number
+			into
+			X
+	yes :  2
+	type :  input
+2 : 
+	no :  3
+	root :  0
+	cy :  589
+	cx :  318
+	words : 
+			if
+			X
+			is
+			greater
+			than
+			15
+	yes :  4
+	type :  if
+3 : 
+	no :  None
+	root :  0
+	cy :  589
+	cx :  767
+	words : 
+			increment
+			X
+			by
+			15
+	yes :  5
+	type :  operation
+4 : 
+	no :  1
+	root :  0
+	cy :  1041
+	cx :  319
+	words : 
+			decrement
+			X
+			by
+			2
+	yes :  1
+	type :  endif
+5 : 
+	no :  None
+	root :  0
+	cy :  1043
+	cx :  765
+	words : 
+			print
+			X
+	yes :  None
+	type :  output
+None
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+X is greater than 15 [u'decrement X by 2'] [u'increment X by 15']
+{'type': 'normal', 'statement': u'input a number into X'}
+{}
+You []
+must []
+input [number, into]
+a []
+number []
+into [X]
+X []
+input You must input a number into X
+Intent found : input
+input 4937 --- ROOT a number
+a number
+1
+into [X]
+Vars is set
+{'length': 1, 'type': 'int'}
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+
+{'status': 'false', 'true': [u'decrement X by 2'], 'false': [u'increment X by 15'], 'type': 'condition', 'condition': u'X is greater than 15'}
+decrement X by 2
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+decrement [X]
+X [by]
+by [2]
+2 []
+decrement You must decrement X by 2
+Intent found : -
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+increment [X]
+X [by]
+by [15]
+15 []
+increment You must increment X by 15
+Intent found : +
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+
+{'type': 'normal', 'statement': u'print X'}
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+print [X]
+X []
+print You must print X
+Intent found : output
+None X --- X
+varname = X
+varname is = {'length': 1, 'type': 'int'}
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+	}
+
+ cout<<X;
+
+//X is not an array
+
+#include<iostream.h>
+using namespace std;
+int main(){
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+	}
+
+ cout<<X;
+
+//X is not an array
+return 0;}
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+	int Array[10];
+	for (int i =0;i<10;i++)
+	{	cout<<"Enter number "<<i<<":";
+		cin>>Array[i];
+	}
+
+{'type': 'normal', 'statement': u'print sum of the Array'}
+{'Array': {'length': 10, 'type': 'int'}}
+You []
+must []
+print [sum]
+sum [of]
+of [Array]
+the []
+Array []
+print You must print sum of the Array
+Intent found : output
+None sum --- Array
+varname = Array
+varname is = {'length': 10, 'type': 'int'}
+	int Array[10];
+	for (int i =0;i<10;i++)
+	{	cout<<"Enter number "<<i<<":";
+		cin>>Array[i];
+	}
+	int sum=0;
+	for(int i=0;i<10;i++)
+		sum+=Array[i];
+	cout<<sum;
+
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+Flowmain2.jpg
+input
+<type 'dict'>
+regions : 
+	boundingBox :  24,76,384,41
+	lines : 
+		boundingBox :  24,76,384,41
+		words : 
+			boundingBox :  24,79,88,38
+			text :  input
+			boundingBox :  124,87,18,21
+			text :  a
+			boundingBox :  155,76,133,32
+			text :  number
+			boundingBox :  299,79,66,29
+			text :  into
+			boundingBox :  378,79,30,29
+			text :  X
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}} 
+
+
+stopped
+1 vertical
+decision
+<type 'dict'>
+regions : 
+	boundingBox :  64,120,158,54
+	lines : 
+		boundingBox :  64,120,158,27
+		words : 
+			boundingBox :  64,120,18,21
+			text :  if
+			boundingBox :  89,122,21,19
+			text :  X
+			boundingBox :  116,122,19,19
+			text :  is
+			boundingBox :  143,124,79,23
+			text :  greater
+		boundingBox :  100,154,85,20
+		words : 
+			boundingBox :  100,154,49,20
+			text :  than
+			boundingBox :  159,155,26,19
+			text :  15
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}} 
+
+
+operation
+<type 'dict'>
+regions : 
+	boundingBox :  18,66,191,86
+	lines : 
+		boundingBox :  18,66,191,40
+		words : 
+			boundingBox :  18,66,153,37
+			text :  increment
+			boundingBox :  181,78,28,28
+			text :  X
+		boundingBox :  67,112,86,40
+		words : 
+			boundingBox :  67,112,40,40
+			text :  by
+			boundingBox :  118,119,35,28
+			text :  15
+textAngle :  -4.0
+orientation :  Up
+language :  en
+{'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}} 
+
+
+stopped
+2 horizontal
+stopped
+3 vertical
+stopped
+4 vertical
+operation
+<type 'dict'>
+regions : 
+	boundingBox :  28,78,174,87
+	lines : 
+		boundingBox :  28,78,174,30
+		words : 
+			boundingBox :  28,78,174,30
+			text :  decrement
+		boundingBox :  63,126,111,39
+		words : 
+			boundingBox :  63,128,29,28
+			text :  X
+			boundingBox :  103,126,42,39
+			text :  by
+			boundingBox :  156,128,18,28
+			text :  2
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}} 
+
+
+output
+<type 'dict'>
+regions : 
+	boundingBox :  108,77,172,52
+	lines : 
+		boundingBox :  108,77,172,52
+		words : 
+			boundingBox :  108,77,114,52
+			text :  print
+			boundingBox :  238,77,42,39
+			text :  X
+textAngle :  0.0
+orientation :  Up
+language :  de
+{'type': 'output', 'words': [u'print', u'X']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}, 5: {'cy': 1043, 'cx': 765, 'type': 'output', 'words': [u'print', u'X']}} 
+
+
+stopped
+5 horizontal
+Final Results:
+{1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}, 5: {'cy': 1043, 'cx': 765, 'type': 'output', 'words': [u'print', u'X']}}
+
+
+
+{1: {'cx': 318, 'cy': 358, 'used': 0, 'orientation': 'vertical'}, 2: {'cx': 570, 'cy': 588, 'used': 0, 'orientation': 'horizontal'}, 3: {'cx27.62.78.200 - - [06/Jun/2017 02:46:41] "[37mGET /picture?text=Flowmain2.jpg HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:48:55] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:49:00] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:49:15] "[37mGET /vline?text=print%20sum%20of%20the%20Array HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:49:20] "[37mGET /voice HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:50:58] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:51:11] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:51:46] "[37mGET /vline?text=print%20sum%20of%20the%20Array HTTP/1.1[0m" 200 -
+': 767, 'cy': 835, 'used': 0, 'orientation': 'vertical'}, 4: {'cx': 318, 'cy': 840, 'used': 0, 'orientation': 'vertical'}, 5: {'cx': 512, 'cy': 1042, 'used': 0, 'orientation': 'horizontal'}} 
+
+
+1!1^2
+2-2->3
+2!4^4
+3!3^5
+4-5->5
+1 : 
+	no :  None
+	root :  1
+	cy :  161
+	cx :  318
+	words : 
+			input
+			a
+			number
+			into
+			X
+	yes :  2
+	type :  input
+2 : 
+	no :  3
+	root :  0
+	cy :  589
+	cx :  318
+	words : 
+			if
+			X
+			is
+			greater
+			than
+			15
+	yes :  4
+	type :  if
+3 : 
+	no :  None
+	root :  0
+	cy :  589
+	cx :  767
+	words : 
+			increment
+			X
+			by
+			15
+	yes :  5
+	type :  operation
+4 : 
+	no :  1
+	root :  0
+	cy :  1041
+	cx :  319
+	words : 
+			decrement
+			X
+			by
+			2
+	yes :  1
+	type :  endif
+5 : 
+	no :  None
+	root :  0
+	cy :  1043
+	cx :  765
+	words : 
+			print
+			X
+	yes :  None
+	type :  output
+None
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+X is greater than 15 [u'decrement X by 2'] [u'increment X by 15']
+{'type': 'normal', 'statement': u'input a number into X'}
+{}
+You []
+must []
+input [number, into]
+a []
+number []
+into [X]
+X []
+input You must input a number into X
+Intent found : input
+input 4937 --- ROOT a number
+a number
+1
+into [X]
+Vars is set
+{'length': 1, 'type': 'int'}
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+
+{'status': 'false', 'true': [u'decrement X by 2'], 'false': [u'increment X by 15'], 'type': 'condition', 'condition': u'X is greater than 15'}
+decrement X by 2
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+decrement [X]
+X [by]
+by [2]
+2 []
+decrement You must decrement X by 2
+Intent found : -
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+increment [X]
+X [by]
+by [15]
+15 []
+increment You must increment X by 15
+Intent found : +
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+
+{'type': 'normal', 'statement': u'print X'}
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+print [X]
+X []
+print You must print X
+Intent found : output
+None X --- X
+varname = X
+varname is = {'length': 1, 'type': 'int'}
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+	}
+
+ cout<<X;
+
+//X is not an array
+
+#include<iostream.h>
+using namespace std;
+int main(){
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+	}
+
+ cout<<X;
+
+//X is not an array
+return 0;}
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+	int Array[10];
+	for (int i =0;i<10;i++)
+	{	cout<<"Enter number "<<i<<":";
+		cin>>Array[i];
+	}
+
+{'type': 'normal', 'statement': u'print sum of the Array'}
+{'Array': {'length': 10, 'type': 'int'}}
+You []
+must []
+print [sum]
+sum [of]
+of [Array]
+the []
+Array []
+print You must print sum of the Array
+Intent found : output
+None sum --- Array
+varname = Array
+varname is = {'length': 10, 'type': 'int'}
+	int Array[10];
+	for (int i =0;i<10;i++)
+	{	cout<<"Enter number "<<i<<":";
+		cin>>Array[i];
+	}
+	int sum=0;
+	for(int i=0;i<10;i++)
+		sum+=Array[i];
+	cout<<sum;
+
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+	int Array[10];
+	for (int i =0;i<10;i++)
+	{	cout<<"Enter number "<<i<<":";
+		cin>>Array[i];
+	}
+
+{'type': 'normal', 'statement': u'print sum of the Array'}
+{'Array': {'length': 10, 'type': 'int'}}
+You []
+must []
+print [sum]
+sum [of]
+of [Array]
+the []
+Array []
+print You mu27.62.78.200 - - [06/Jun/2017 02:51:49] "[37mGET /voice HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:52:07] "[37mGET /clear HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:52:20] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:53:01] "[37mGET /vline?text=accept%20a%20number%20into%20X HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:53:19] "[37mGET /vline?text=multiply%20X%20by%204 HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:53:20] "[37mGET /voice HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 02:53:54] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+st print sum of the Array
+Intent found : output
+None sum --- Array
+varname = Array
+varname is = {'length': 10, 'type': 'int'}
+	int Array[10];
+	for (int i =0;i<10;i++)
+	{	cout<<"Enter number "<<i<<":";
+		cin>>Array[i];
+	}
+	int sum=0;
+	for(int i=0;i<10;i++)
+		sum+=Array[i];
+	cout<<sum;
+
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+{'type': 'normal', 'statement': u'accept a number into X'}
+{}
+You []
+must []
+accept [number]
+a []
+number [into]
+into [X]
+X []
+accept You must accept a number into X
+Intent found : input
+accept 2132 --- ROOT a number
+a number
+1
+into [X]
+Vars is set
+{'length': 1, 'type': 'int'}
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+
+{'type': 'normal', 'statement': u'multiply X by 4'}
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+multiply [X]
+X [by]
+by [4]
+4 []
+multiply You must multiply X by 4
+Intent found : *
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	X = X * 4;
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+Flowmain2.jpg
+input
+<type 'dict'>
+regions : 
+	boundingBox :  24,76,384,41
+	lines : 
+		boundingBox :  24,76,384,41
+		words : 
+			boundingBox :  24,79,88,38
+			text :  input
+			boundingBox :  124,87,18,21
+			text :  a
+			boundingBox :  155,76,133,32
+			text :  number
+			boundingBox :  299,79,66,29
+			text :  into
+			boundingBox :  378,79,30,29
+			text :  X
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}} 
+
+
+stopped
+1 vertical
+decision
+<type 'dict'>
+regions : 
+	boundingBox :  64,120,158,54
+	lines : 
+		boundingBox :  64,120,158,27
+		words : 
+			boundingBox :  64,120,18,21
+			text :  if
+			boundingBox :  89,122,21,19
+			text :  X
+			boundingBox :  116,122,19,19
+			text :  is
+			boundingBox :  143,124,79,23
+			text :  greater
+		boundingBox :  100,154,85,20
+		words : 
+			boundingBox :  100,154,49,20
+			text :  than
+			boundingBox :  159,155,26,19
+			text :  15
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}} 
+
+
+operation
+<type 'dict'>
+regions : 
+	boundingBox :  18,66,191,86
+	lines : 
+		boundingBox :  18,66,191,40
+		words : 
+			boundingBox :  18,66,153,37
+			text :  increment
+			boundingBox :  181,78,28,28
+			text :  X
+		boundingBox :  67,112,86,40
+		words : 
+			boundingBox :  67,112,40,40
+			text :  by
+			boundingBox :  118,119,35,28
+			text :  15
+textAngle :  -4.0
+orientation :  Up
+language :  en
+{'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}} 
+
+
+stopped
+2 horizontal
+stopped
+3 vertical
+stopped
+4 vertical
+operation
+<type 'dict'>
+regions : 
+	boundingBox :  28,78,174,87
+	lines : 
+		boundingBox :  28,78,174,30
+		words : 
+			boundingBox :  28,78,174,30
+			text :  decrement
+		boundingBox :  63,126,111,39
+		words : 
+			boundingBox :  63,128,29,28
+			text :  X
+			boundingBox :  103,126,42,39
+			text :  by
+			boundingBox :  156,128,18,28
+			text :  2
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'oper27.62.78.200 - - [06/Jun/2017 02:54:06] "[37mGET /picture?text=Flowmain2.jpg HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 03:45:05] "[37mGET /language?lang=Python HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 03:45:08] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+ation', 'words': [u'decrement', u'X', u'by', u'2']}} 
+
+
+output
+<type 'dict'>
+regions : 
+	boundingBox :  108,77,172,52
+	lines : 
+		boundingBox :  108,77,172,52
+		words : 
+			boundingBox :  108,77,114,52
+			text :  print
+			boundingBox :  238,77,42,39
+			text :  X
+textAngle :  0.0
+orientation :  Up
+language :  de
+{'type': 'output', 'words': [u'print', u'X']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}, 5: {'cy': 1043, 'cx': 765, 'type': 'output', 'words': [u'print', u'X']}} 
+
+
+stopped
+5 horizontal
+Final Results:
+{1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}, 5: {'cy': 1043, 'cx': 765, 'type': 'output', 'words': [u'print', u'X']}}
+
+
+
+{1: {'cx': 318, 'cy': 358, 'used': 0, 'orientation': 'vertical'}, 2: {'cx': 570, 'cy': 588, 'used': 0, 'orientation': 'horizontal'}, 3: {'cx': 767, 'cy': 835, 'used': 0, 'orientation': 'vertical'}, 4: {'cx': 318, 'cy': 840, 'used': 0, 'orientation': 'vertical'}, 5: {'cx': 512, 'cy': 1042, 'used': 0, 'orientation': 'horizontal'}} 
+
+
+1!1^2
+2-2->3
+2!4^4
+3!3^5
+4-5->5
+1 : 
+	no :  None
+	root :  1
+	cy :  161
+	cx :  318
+	words : 
+			input
+			a
+			number
+			into
+			X
+	yes :  2
+	type :  input
+2 : 
+	no :  3
+	root :  0
+	cy :  589
+	cx :  318
+	words : 
+			if
+			X
+			is
+			greater
+			than
+			15
+	yes :  4
+	type :  if
+3 : 
+	no :  None
+	root :  0
+	cy :  589
+	cx :  767
+	words : 
+			increment
+			X
+			by
+			15
+	yes :  5
+	type :  operation
+4 : 
+	no :  1
+	root :  0
+	cy :  1041
+	cx :  319
+	words : 
+			decrement
+			X
+			by
+			2
+	yes :  1
+	type :  endif
+5 : 
+	no :  None
+	root :  0
+	cy :  1043
+	cx :  765
+	words : 
+			print
+			X
+	yes :  None
+	type :  output
+None
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+X is greater than 15 [u'decrement X by 2'] [u'increment X by 15']
+{'type': 'normal', 'statement': u'input a number into X'}
+{}
+You []
+must []
+input [number, into]
+a []
+number []
+into [X]
+X []
+input You must input a number into X
+Intent found : input
+input 4937 --- ROOT a number
+a number
+1
+into [X]
+Vars is set
+{'length': 1, 'type': 'int'}
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+
+{'status': 'false', 'true': [u'decrement X by 2'], 'false': [u'increment X by 15'], 'type': 'condition', 'condition': u'X is greater than 15'}
+decrement X by 2
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+decrement [X]
+X [by]
+by [2]
+2 []
+decrement You must decrement X by 2
+Intent found : -
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+increment [X]
+X [by]
+by [15]
+15 []
+increment You must increment X by 15
+Intent found : +
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+
+{'type': 'normal', 'statement': u'print X'}
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+print [X]
+X []
+print You must print X
+Intent found : output
+None X --- X
+varname = X
+varname is = {'length': 1, 'type': 'int'}
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+	}
+
+ cout<<X;
+
+//X is not an array
+
+#include<iostream.h>
+using namespace std;
+int main(){
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+	}
+
+ cout<<X;
+
+//X is not an array
+return 0;}
+Chosen : Python <type 'type'>
+py header set 
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers27.62.78.200 - - [06/Jun/2017 03:45:13] "[37mGET /voice HTTP/1.1[0m" 200 -
+27.62.78.200 - - [06/Jun/2017 03:48:12] "[37mGET /language?lang=Python HTTP/1.1[0m" 200 -
+212.92.115.17 - - [06/Jun/2017 07:41:53] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00+&\xe0\x00\x00\x00\x00\x00Cookie:')
+212.92.115.17 - - [06/Jun/2017 07:41:53] "[1m[31m  +&à     Cookie: mstshash=hello[0m" 400 -
+117.97.218.21 - - [06/Jun/2017 07:44:28] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 07:44:31] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 07:45:16] "[37mGET /vline?text=accept%205%20numbers%20into%20an%20Array HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 07:45:32] "[37mGET /vline?text=print%20sum%20of%20the%20Array HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 07:45:37] "[37mGET /voice HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 08:19:56] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 08:20:24] "[37mGET /vline?text=accept%20a%20number%20into%20A HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 08:21:19] "[1m[35mGET /vline?text=if%20A%20is%20greater%20than%200%20then%20increment%20A HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/SimplX/app.py", line 51, in vline
+    NLPFunc.blockproc(data)
+  File "/home/ubuntu/SimplX/NLP.py", line 341, in blockproc
+    pos = pos.strip().split(" and ")
+UnboundLocalError: local variable 'pos' referenced before assignment
+117.97.218.21 - - [06/Jun/2017 08:21:20] "[37mGET /voice HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 08:21:33] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 08:21:38] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 08:21:40] "[37mGET /voice HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 08:21:59] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 08:22:03] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 08:22:21] "[37mGET /vline?text=print%20sum%20of%20the%20Array HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 08:22:23] "[37mGET /voice HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 08:22:31] "[37mGET /language?lang=Python HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 08:22:31] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 08:22:32] "[37mGET /voice HTTP/1.1[0m" 200 -
+117.97.218.21 - - [06/Jun/2017 08:22:42] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+ []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+Array = []
+
+for i in xrange(10)
+	Array.append(input('Enter number'+str(i)))
+
+
+Chosen : Python <type 'type'>
+py header set 
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+{'type': 'normal', 'statement': u'accept 5 numbers into an Array'}
+{}
+You []
+must []
+accept [numbers, into]
+5 []
+numbers []
+into [Array]
+an []
+Array []
+accept You must accept 5 numbers into an Array
+Intent found : input
+accept 2132 --- ROOT 5 numbers
+5 numbers
+5
+into [Array]
+Vars is set
+{'length': 5, 'type': 'int'}
+	int Array[5];
+	for (int i =0;i<5;i++)
+	{	cout<<"Enter number "<<i<<":";
+		cin>>Array[i];
+	}
+
+{'type': 'normal', 'statement': u'print sum of the Array'}
+{'Array': {'length': 5, 'type': 'int'}}
+You []
+must []
+print [sum]
+sum [of]
+of [Array]
+the []
+Array []
+print You must print sum of the Array
+Intent found : output
+None sum --- Array
+varname = Array
+varname is = {'length': 5, 'type': 'int'}
+	int Array[5];
+	for (int i =0;i<5;i++)
+	{	cout<<"Enter number "<<i<<":";
+		cin>>Array[i];
+	}
+	int sum=0;
+	for(int i=0;i<5;i++)
+		sum+=Array[i];
+	cout<<sum;
+
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+{'type': 'normal', 'statement': u'accept a number into A'}
+{}
+You []
+must []
+accept [number, into]
+a []
+number []
+into [A]
+A []
+accept You must accept a number into A
+Intent found : input
+accept 2132 --- ROOT a number
+a number
+1
+into [A]
+Vars is set
+{'length': 1, 'type': 'int'}
+	int A;
+	cout<<"Enter number :";
+	cin>>A;
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+	int Array[10];
+	for (int i =0;i<10;i++)
+	{	cout<<"Enter number "<<i<<":";
+		cin>>Array[i];
+	}
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+	int Array[10];
+	for (int i =0;i<10;i++)
+	{	cout<<"Enter number "<<i<<":";
+		cin>>Array[i];
+	}
+
+{'type': 'normal', 'statement': u'print sum of the Array'}
+{'Array': {'length': 10, 'type': 'int'}}
+You []
+must []
+print [sum]
+sum [of]
+of [Array]
+the []
+Array []
+print You must print sum of the Array
+Intent found : output
+None sum --- Array
+varname = Array
+varname is = {'length': 10, 'type': 'int'}
+	int Array[10];
+	for (int i =0;i<10;i++)
+	{	cout<<"Enter number "<<i<<":";
+		cin>>Array[i];
+	}
+	int sum=0;
+	for(int i=0;i<10;i++)
+		sum+=Array[i];
+	cout<<sum;
+
+
+Chosen : Python <type 'type'>
+py header set 
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+Array = []
+
+for i in xrange(10)
+	Array.append(input('Enter number'+str(i)))
+
+
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+Flowmain2.jpg
+input
+<type 'dict'>
+regions : 
+	boundingBox :  24,76,384,41
+	lines : 
+		boundingBox :  24,76,384,41
+		words : 
+			boundingBox :  24,79,88,38
+			text :  input
+			boundingBox :  124,87,18,21
+			text :  a
+			boundingBox :  155,76,133,32
+			text :  number
+			boundingBox :  299,79,66,29
+			text :  into
+			boundingBox :  378,79,30,29
+			text :  X
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}} 
+
+
+stopped
+1 vertical
+decision
+<type 'dict'>
+regions : 
+	boundingBox :  64,120,158,54
+	lines : 
+		boundingBox :  64,120,158,27
+		words : 
+			boundingBox :  64,120,18,21
+			text :  if
+			boundingBox :  89,122,21,19
+			text :  X
+			boundingBox :  116,122,19,19
+			text :  is
+			boundingBox :  143,124,79,23
+			text :  greater
+		boundingBox :  100,154,85,20
+		words : 
+			boundingBox :  100,154,49,20
+			text :  than
+			boundingBox :  159,155,26,19
+			text :  15
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}} 
+
+
+operation
+<type 'dict'>
+regions : 
+	boundingBox :  18,66,191,86
+	lines : 
+		boundingBox :  18,66,191,40
+		words : 
+			boundingBox :  18,66,153,37
+			text :  increment
+			boundingBox :  181,78,28,28
+			text :  X
+		boundingBox :  67,112,86,40
+		words : 
+			boundingBox :  67,112,40,40
+			text :  by
+			boundingBox :  118,119,35,28
+			text :  15
+textAngle :  -4.0
+orientation :  Up
+language :  en
+{'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}} 
+
+
+stopped
+2 horizontal
+stopped
+3 vertical
+stopped
+4 vertical
+operation
+<type 'dict'>
+regions : 
+	boundingBox :  28,78,174,87
+	lines : 
+		boundingBox :  28,78,174,30
+		words : 
+			boundingBox :  28,78,174,30
+			text :  decrement
+		boundingBox :  63,126,111,39
+		words : 
+			boundingBox :  63,128,29,28
+			text :  X
+			boundingBox :  103,126,42,39
+			text :  by
+			boundingBox :  156,128,18,28
+			text :  2
+textAngle :  0.0
+orientation :  Up
+language :  en
+{'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}} 
+
+
+output
+<type 'dict'>
+regions : 
+	boundingBox :  108,77,172,52
+	lines : 
+		boundingBox :  108,77,172,52
+		words : 
+			boundingBox :  108,77,114,52
+			text :  print
+			boundingBox :  238,77,42,39
+			text :  X
+textAngle :  0.0
+orientation :  Up
+language :  de
+{'type': 'output', 'words': [u'print', u'X']}
+
+
+<type 'dict'> {1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}, 5: {'cy': 1043, 'cx': 765, 'type': 'output', 'words': [u'print', u'X']}} 
+
+
+stopped
+5 horizontal
+Final Results:
+{1: {'cy': 161, 'cx': 318, 'type': 'input', 'words': [u'input', u'a', u'number', u'into', u'X']}, 2: {'cy': 589, 'cx': 318, 'type': 'decision', 'words': [u'if', u'X', u'is', u'greater', u'than', u'15']}, 3: {'cy': 589, 'cx': 767, 'type': 'operation', 'words': [u'increment', u'X', u'by', u'15']}, 4: {'cy': 1041, 'cx': 319, 'type': 'operation', 'words': [u'decrement', u'X', u'by', u'2']}, 5: {'cy': 1043, 'cx': 765, 'type': 'output', 'words': [u'print', u'X']117.97.218.21 - - [06/Jun/2017 08:22:59] "[37mGET /picture?text=Flowmain2.jpg HTTP/1.1[0m" 200 -
+212.92.115.17 - - [06/Jun/2017 08:50:35] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00+&\xe0\x00\x00\x00\x00\x00Cookie:')
+212.92.115.17 - - [06/Jun/2017 08:50:35] "[1m[31m  +&à     Cookie: mstshash=hello[0m" 400 -
+106.208.215.65 - - [06/Jun/2017 10:06:51] "[37mGET /language?lang=cpp HTTP/1.1[0m" 200 -
+106.208.215.65 - - [06/Jun/2017 10:07:00] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+106.208.215.65 - - [06/Jun/2017 10:07:01] "[37mGET /voice HTTP/1.1[0m" 200 -
+106.208.215.65 - - [06/Jun/2017 10:07:38] "[37mGET /language?lang=Python HTTP/1.1[0m" 200 -
+106.208.215.65 - - [06/Jun/2017 10:07:38] "[37mGET /vline?text=accept%2010%20numbers%20into%20Array HTTP/1.1[0m" 200 -
+106.208.215.65 - - [06/Jun/2017 10:07:49] "[37mGET /vline?text=print%20sum%20of%20the%20Array HTTP/1.1[0m" 200 -
+106.208.215.65 - - [06/Jun/2017 10:07:52] "[37mGET /voice HTTP/1.1[0m" 200 -
+}}
+
+
+
+{1: {'cx': 318, 'cy': 358, 'used': 0, 'orientation': 'vertical'}, 2: {'cx': 570, 'cy': 588, 'used': 0, 'orientation': 'horizontal'}, 3: {'cx': 767, 'cy': 835, 'used': 0, 'orientation': 'vertical'}, 4: {'cx': 318, 'cy': 840, 'used': 0, 'orientation': 'vertical'}, 5: {'cx': 512, 'cy': 1042, 'used': 0, 'orientation': 'horizontal'}} 
+
+
+1!1^2
+2-2->3
+2!4^4
+3!3^5
+4-5->5
+1 : 
+	no :  None
+	root :  1
+	cy :  161
+	cx :  318
+	words : 
+			input
+			a
+			number
+			into
+			X
+	yes :  2
+	type :  input
+2 : 
+	no :  3
+	root :  0
+	cy :  589
+	cx :  318
+	words : 
+			if
+			X
+			is
+			greater
+			than
+			15
+	yes :  4
+	type :  if
+3 : 
+	no :  None
+	root :  0
+	cy :  589
+	cx :  767
+	words : 
+			increment
+			X
+			by
+			15
+	yes :  5
+	type :  operation
+4 : 
+	no :  1
+	root :  0
+	cy :  1041
+	cx :  319
+	words : 
+			decrement
+			X
+			by
+			2
+	yes :  1
+	type :  endif
+5 : 
+	no :  None
+	root :  0
+	cy :  1043
+	cx :  765
+	words : 
+			print
+			X
+	yes :  None
+	type :  output
+None
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+X is greater than 15 [u'decrement X by 2'] [u'increment X by 15']
+{'type': 'normal', 'statement': u'input a number into X'}
+{}
+You []
+must []
+input [number, into]
+a []
+number []
+into [X]
+X []
+input You must input a number into X
+Intent found : input
+input 4937 --- ROOT a number
+a number
+1
+into [X]
+Vars is set
+{'length': 1, 'type': 'int'}
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+
+{'status': 'false', 'true': [u'decrement X by 2'], 'false': [u'increment X by 15'], 'type': 'condition', 'condition': u'X is greater than 15'}
+decrement X by 2
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+decrement [X]
+X [by]
+by [2]
+2 []
+decrement You must decrement X by 2
+Intent found : -
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+increment [X]
+X [by]
+by [15]
+15 []
+increment You must increment X by 15
+Intent found : +
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+
+{'type': 'normal', 'statement': u'print X'}
+{'X': {'length': 1, 'type': 'int'}}
+You []
+must []
+print [X]
+X []
+print You must print X
+Intent found : output
+None X --- X
+varname = X
+varname is = {'length': 1, 'type': 'int'}
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+	}
+
+ cout<<X;
+
+//X is not an array
+
+#include<iostream.h>
+using namespace std;
+int main(){
+	int X;
+	cout<<"Enter number :";
+	cin>>X;
+	if ( X > 15 )
+	{
+	X = X - 2;
+	}
+	else
+	{
+	X = X + 15;
+	}
+
+ cout<<X;
+
+//X is not an array
+return 0;}
+Chosen : cpp <type 'type'>
+cpp header set #include<iostream.h>
+using namespace std;
+int main(){
+
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+	int Array[10];
+	for (int i =0;i<10;i++)
+	{	cout<<"Enter number "<<i<<":";
+		cin>>Array[i];
+	}
+
+Chosen : Python <type 'type'>
+py header set 
+{'type': 'normal', 'statement': u'accept 10 numbers into Array'}
+{}
+You []
+must []
+accept [numbers, into]
+10 []
+numbers []
+into [Array]
+Array []
+accept You must accept 10 numbers into Array
+Intent found : input
+accept 2132 --- ROOT 10 numbers
+10 numbers
+10
+into [Array]
+Vars is set
+{'length': 10, 'type': 'int'}
+Array = []
+
+for i in xrange(10)
+	Array.append(input('Enter number'+str(i)))
+
+
+{'type': 'normal', 'statement': u'print sum of the Array'}
+{'Array': {'length': 10, 'type': 'int'}}
+You []
+must []
+print [sum]
+sum [of]
+of [Array]
+the []
+Array []
+print You must print sum of the Array
+Intent found : output
+None sum --- Array
+varname = Array
+varname is = {'length': 10, 'type': 'int'}
+Array = []
+
+for i in xrange(10)
+	Array.append(input('Enter number'+str(i)))
+
+sum = 0
+for i in Array:
+	sum+=i
+print sum
+
+

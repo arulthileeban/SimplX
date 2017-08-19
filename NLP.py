@@ -395,14 +395,17 @@ class CodeSpeak():
     def proc(self, query):
         print self.vars
         doc = self.nlp(u'You must ' + unicode(query))
-        varname = 'temp'
+        #doc = self.nlp(unicode(query))
+	varname = 'temp'
         vtype = 'int'
         count = 1
         root = mod = None
         # Root of sentence
+	for w in doc:print w,list(w.rights)
         sent_root = [w for w in doc if w.head is w][0]
         # object_var - integer/string
-        object_var = list(sent_root.rights)[0]
+        print sent_root,doc
+	object_var = list(sent_root.rights)[0]
         # Merging object_var with its adjectives
         doc[object_var.left_edge.i: object_var.i + 1].merge()
         intent = None
